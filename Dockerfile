@@ -35,13 +35,9 @@ RUN echo 'server {\n\
     root /var/www/html;\n\
     index index.php index.html;\n\
     \n\
-    # Fix Admin trailing slash and directory access\n\
+    # Fix Admin trailing slash\n\
     location = /admin {\n\
     return 301 /admin/;\n\
-    }\n\
-    \n\
-    location /admin/ {\n\
-    try_files $uri $uri/ $uri.php /admin/index.php?$query_string;\n\
     }\n\
     \n\
     location / {\n\
@@ -58,10 +54,21 @@ RUN echo 'server {\n\
     rewrite ^/user/([a-zA-Z0-9_-]+)$ /user.php?page=$1 last;\n\
     rewrite ^/sitemap.xml$ /sitemap.php last;\n\
     \n\
-    try_files $uri $uri/ $uri.php?$query_string /index.php?$query_string;\n\
+    # Try finding the file, then folder, then file.php (this triggers internal redirect to PHP block)\n\
+    try_files $uri $uri/ /index.php?$query_string;\n\
+    }\n\
+    \n\
+    # Special handling for admin to avoid downloads\n\
+    location /admin/ {\n\
+    try_files $uri $uri/ @admin_rewrite;\n\
+    }\n\
+    \n\
+    location @admin_rewrite {\n\
+    rewrite ^/admin/(.*)$ /admin/$1.php last;\n\
     }\n\
     \n\
     location ~ \.php$ {\n\
+    try_files $uri =404;\n\
     fastcgi_pass 127.0.0.1:9000;\n\
     fastcgi_index index.php;\n\
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n\
