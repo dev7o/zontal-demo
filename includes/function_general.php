@@ -109,6 +109,23 @@ function Zon_Config($data)
 
     $row = mysqli_fetch_assoc($run);
 
+    // Overriding specific config values programmatically
+    if ($data == 'site_name') {
+        return "ZapPlay";
+    }
+    if ($data == 'profile_tagline') {
+        return "Welcome to ZapPlay";
+    }
+    if ($data == 'site_title') {
+        return "ZapPlay - Arcade HTML 5 Game Portal";
+    }
+    if ($data == 'site_desc') {
+        return "ZapPlay - Arcade HTML 5 Game Portal";
+    }
+    if ($data == 'site_keywords') {
+        return "ZapPlay Game Portal, Game Portal, Online Playing Games, HTML5 Games";
+    }
+
     return $row[$data];
 }
 
@@ -151,15 +168,15 @@ function Game_likes_data($data)
 {
     global $con;
 
-        $current_user =  User_Data_Two('id');
-    
-        $query = "select * from zon_likes where user_id=$current_user";
-    
-        $run = mysqli_query($con, $query);
-    
-        $row = mysqli_fetch_assoc($run);
+    $current_user = User_Data_Two('id');
 
-        return $row[$data];
+    $query = "select * from zon_likes where user_id=$current_user";
+
+    $run = mysqli_query($con, $query);
+
+    $row = mysqli_fetch_assoc($run);
+
+    return $row[$data];
 }
 
 // Getting Total Numbers of Rows of Games
@@ -174,7 +191,7 @@ function Total_Games()
 }
 
 // Getting Total Numbers of Rows By Table Name
-function Total_Items ($table)
+function Total_Items($table)
 {
 
     global $con;
@@ -194,11 +211,12 @@ function ValidateFields($field, $var)
 }
 
 // Getting Page Data From Database
-function page_data ($id, $data) {
+function page_data($id, $data)
+{
     global $con;
 
     $query = "select * from zon_pages where id=$id";
-    
+
     $run = mysqli_query($con, $query);
 
     $row = mysqli_fetch_assoc($run);
