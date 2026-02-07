@@ -1,8 +1,4 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 if (!isset($_SESSION['admin-Loggedin']) && !isset($_SESSION['is_admin_Loggedin'])) {
     @header("location: ./login");
 }
@@ -21,7 +17,8 @@ include("config.php");
     <div class="logo px-4 py-6">
         <a href="<?php echo $site_url ?>">
             <h3 class="fw-bold text-2xl dark:text-gray-100 uppercase text-gray-600 ">
-                <?php echo Zon_Config('site_name') ?></h3>
+                <?php echo Zon_Config('site_name') ?>
+            </h3>
         </a>
     </div>
     <ul class="list px-4 mt-2">

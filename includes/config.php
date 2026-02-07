@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Railway configuration
 if (getenv('RAILWAY_ENVIRONMENT')) {
     $sql_db_host = getenv('MYSQLHOST') ?: 'localhost';
