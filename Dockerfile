@@ -36,6 +36,11 @@ RUN echo 'server {\n\
     index index.php index.html;\n\
     \n\
     location / {\n\
+    rewrite ^/login$ /login.php last;\n\
+    rewrite ^/register$ /register.php last;\n\
+    rewrite ^/logout$ /logout.php last;\n\
+    rewrite ^/search$ /category.php last;\n\
+    \n\
     rewrite ^/single/([0-9]+)/([a-zA-Z0-9_-]+)$ /single.php?id=$1&name=$2 last;\n\
     rewrite ^/page/([0-9]+)/([a-zA-Z0-9_-]+)$ /page.php?id=$1&slug=$2 last;\n\
     rewrite ^/archive/([a-zA-Z0-9_-]+)$ /archive.php?type=$1 last;\n\
