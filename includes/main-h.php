@@ -35,12 +35,19 @@
             <?php // Search Bar Form End ?>
         </div>
         <div class="flex items-center opnal gap-3 px-12">
+            <?php // Mode Changer (Dark/Light) ?>
+            <button class="mode-changer text-gray-600 dark:text-gray-300 px-2 text-lg">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+
             <?php // If User Not User Loggedin. This Links is Showing otherwise not  ?>
             <?php if (!isset($_SESSION['Loggedin'])) { ?>
                 <a href="<?php echo $site_url ?>login"
                     class="text-gray-600 dark:text-gray-300 whitespace-nowrap px-2">Login</a>
                 <a href="<?php echo $site_url ?>register"
-                    class="text-gray-600 dark:text-gray-300 whitespace-nowrap px-2">Sign up</a>
+                    class="text-gray-600 dark:text-gray-300 whitespace-nowrap px-2">Sign
+                    up</a>
             <?php } ?>
             <?php if (isset($_SESSION['Loggedin'])) { ?>
                 <?php if ($_SESSION['Loggedin'] == true) { ?>
@@ -94,12 +101,18 @@
             class="w-full border-2 m-2 bg-transparent text-gray-700 dark:text-gray-200 outline-none py-3 px-2">
         <button class="search fa fa-search dark:text-gray-100 px-4 text-xl"></button>
     </form>
-    <a href="<?php echo $site_url ?>" class="no-search-component">
-        <img class="dark:hidden block" mode-light width="130" src="<?php echo $site_url ?>static/img/logo/logo-dark.png"
-            alt="zontal">
-        <img class="dark:block hidden" mode-dark width="130" src="<?php echo $site_url ?>static/img/logo/logo.png"
-            alt="zontal">
-    </a>
+    <div class="flex items-center gap-2">
+        <button class="mode-changer text-gray-600 dark:text-gray-300 px-2 text-xl no-search-component">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+        </button>
+        <a href="<?php echo $site_url ?>" class="no-search-component">
+            <img class="dark:hidden block" mode-light width="130"
+                src="<?php echo $site_url ?>static/img/logo/logo-dark.png" alt="ZapPlay">
+            <img class="dark:block hidden" mode-dark width="130" src="<?php echo $site_url ?>static/img/logo/logo.png"
+                alt="ZapPlay">
+        </a>
+    </div>
     <button class="fa fa-bars px-6 dark:text-gray-100 text-xl menu no-search-component"></button>
 </div>
 <?php // End Mobile Header  ?>
