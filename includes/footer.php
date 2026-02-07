@@ -36,11 +36,10 @@
 <script>
     var button_1 = document.querySelector(".cat-container .left"), button_2 = document.querySelector(".cat-container .right"), cat_container = document.querySelector(".cat-item-container"); null !== button_1 && button_1.addEventListener("click", () => { cat_container.scrollLeft -= 300, cat_container.scrollLeft && button_2.classList.remove("hidden"), 0 == cat_container.scrollLeft && button_1.classList.add("hidden") }), null !== button_2 && button_2.addEventListener("click", () => { cat_container.scrollLeft += 300; let e = cat_container.scrollWidth - cat_container.clientWidth; cat_container.scrollLeft > e && button_2.classList.add("hidden"), cat_container.scrollLeft > 20 && button_1.classList.remove("hidden") }); var dropdownButton = document.querySelectorAll(".dropdown"); if (null !== dropdownButton) { dropdownButton.forEach(t => { t.addEventListener("click", e) }); function e() { var e = this.getAttribute("data-target"); document.querySelector(e).classList.toggle("active-dropdown") } } var open_Search = document.getElementById("open-search"), close_Search = document.getElementById("close-search"); null !== open_Search && open_Search.addEventListener("click", () => { document.querySelector(".mobile-header").classList.toggle("active-search") }), null !== close_Search && close_Search.addEventListener("click", () => { document.querySelector(".mobile-header").classList.remove("active-search") });
     // Theme Toggle Logic
-    const ModeChnagers = document.querySelectorAll(".mode-changer");
     ModeChnagers.forEach(m => {
         m.addEventListener("click", () => {
             document.documentElement.classList.toggle("dark");
-            document.body.classList.toggle("dark-mode");
+            document.documentElement.classList.toggle("dark-mode");
             if (document.documentElement.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
             } else {
