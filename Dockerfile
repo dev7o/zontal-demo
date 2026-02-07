@@ -35,8 +35,13 @@ RUN echo 'server {\n\
     root /var/www/html;\n\
     index index.php index.html;\n\
     \n\
+    # Fix Admin trailing slash and directory access\n\
+    location = /admin {\n\
+    return 301 /admin/;\n\
+    }\n\
+    \n\
     location /admin/ {\n\
-    try_files $uri $uri/ $uri.php?$query_string /admin/index.php?$query_string;\n\
+    try_files $uri $uri/ $uri.php /admin/index.php?$query_string;\n\
     }\n\
     \n\
     location / {\n\
