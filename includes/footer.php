@@ -35,7 +35,73 @@
 </footer>
 <script>
     var button_1 = document.querySelector(".cat-container .left"), button_2 = document.querySelector(".cat-container .right"), cat_container = document.querySelector(".cat-item-container"); null !== button_1 && button_1.addEventListener("click", () => { cat_container.scrollLeft -= 300, cat_container.scrollLeft && button_2.classList.remove("hidden"), 0 == cat_container.scrollLeft && button_1.classList.add("hidden") }), null !== button_2 && button_2.addEventListener("click", () => { cat_container.scrollLeft += 300; let e = cat_container.scrollWidth - cat_container.clientWidth; cat_container.scrollLeft > e && button_2.classList.add("hidden"), cat_container.scrollLeft > 20 && button_1.classList.remove("hidden") }); var dropdownButton = document.querySelectorAll(".dropdown"); if (null !== dropdownButton) { dropdownButton.forEach(t => { t.addEventListener("click", e) }); function e() { var e = this.getAttribute("data-target"); document.querySelector(e).classList.toggle("active-dropdown") } } var open_Search = document.getElementById("open-search"), close_Search = document.getElementById("close-search"); null !== open_Search && open_Search.addEventListener("click", () => { document.querySelector(".mobile-header").classList.toggle("active-search") }), null !== close_Search && close_Search.addEventListener("click", () => { document.querySelector(".mobile-header").classList.remove("active-search") });
-    const slider = document.querySelectorAll("#Slider"), ScrollLeft = e => { slider.forEach(l => { l.scrollLeft -= e }) }, ScrollRight = e => { slider.forEach(l => { l.scrollLeft -= e }) }, ModeChnagers = document.querySelectorAll(".mode-changer"), ModeChnagers.forEach(m => { m.addEventListener("click", () => { document.documentElement.classList.toggle("dark"), document.body.classList.toggle("dark-mode"), document.documentElement.classList.contains("dark") ? localStorage.setItem("theme", "dark") : localStorage.setItem("theme", "light") }) }), MenuButton = document.querySelector(".menu"), offcanvas = document.querySelector(".offcanvas"), offcanvasClose = document.querySelector(".close-offcanvas"); null !== MenuButton && MenuButton.addEventListener("click", () => { offcanvas.classList.toggle("active") }), null !== offcanvasClose && offcanvasClose.addEventListener("click", () => { offcanvas.classList.toggle("active") }); const SCREEN = document.getElementById("screen"), FULL_SCREEN_BUTTON = document.getElementById("full-screen"); null !== FULL_SCREEN_BUTTON && FULL_SCREEN_BUTTON.addEventListener("click", () => { document.querySelector(".screen").classList.add("active-screen"), document.querySelector(".close-frame").classList.remove("hidden") }); var closeFrame = document.querySelector(".close-frame"); null !== closeFrame && document.querySelector(".close-frame").addEventListener("click", () => { document.querySelector(".screen").classList.remove("active-screen") }); var AvatarImgSrc = document.getElementById("avatar_input"); null !== AvatarImgSrc && AvatarImgSrc.addEventListener("change", () => { var e = URL.createObjectURL(AvatarImgSrc.files[0]); document.getElementById("avatar").src = e, document.getElementById("upload_label").classList.add("hidden"), document.getElementById("avatar").style.zIndex = "1", AvatarImgSrc.style.zIndex = "2" }), null !== document.getElementById("current_url") && (document.getElementById("current_url").value = document.URL);
+    // Theme Toggle Logic
+    const ModeChnagers = document.querySelectorAll(".mode-changer");
+    ModeChnagers.forEach(m => {
+        m.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            document.body.classList.toggle("dark-mode");
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+
+    // Sidebar/Offcanvas Logic
+    const MenuButton = document.querySelector(".menu");
+    const offcanvas = document.querySelector(".offcanvas");
+    const offcanvasClose = document.querySelector(".close-offcanvas");
+    if (MenuButton && offcanvas) {
+        MenuButton.addEventListener("click", () => {
+            offcanvas.classList.toggle("active");
+        });
+    }
+    if (offcanvasClose && offcanvas) {
+        offcanvasClose.addEventListener("click", () => {
+            offcanvas.classList.toggle("active");
+        });
+    }
+
+    // Slider Logic
+    const slider = document.querySelectorAll("#Slider");
+    const ScrollLeft = e => { slider.forEach(l => { l.scrollLeft -= e; }); };
+    const ScrollRight = e => { slider.forEach(l => { l.scrollLeft += e; }); };
+
+    // Full Screen Logic
+    const SCREEN = document.getElementById("screen");
+    const FULL_SCREEN_BUTTON = document.getElementById("full-screen");
+    if (FULL_SCREEN_BUTTON) {
+        FULL_SCREEN_BUTTON.addEventListener("click", () => {
+            document.querySelector(".screen").classList.add("active-screen");
+            document.querySelector(".close-frame").classList.remove("hidden");
+        });
+    }
+    const closeFrame = document.querySelector(".close-frame");
+    if (closeFrame) {
+        closeFrame.addEventListener("click", () => {
+            document.querySelector(".screen").classList.remove("active-screen");
+        });
+    }
+
+    // Avatar Upload Logic
+    const AvatarImgSrc = document.getElementById("avatar_input");
+    if (AvatarImgSrc) {
+        AvatarImgSrc.addEventListener("change", () => {
+            const e = URL.createObjectURL(AvatarImgSrc.files[0]);
+            document.getElementById("avatar").src = e;
+            document.getElementById("upload_label").classList.add("hidden");
+            document.getElementById("avatar").style.zIndex = "1";
+            AvatarImgSrc.style.zIndex = "2";
+        });
+    }
+
+    // Current URL input logic
+    const currentUrlInput = document.getElementById("current_url");
+    if (currentUrlInput) {
+        currentUrlInput.value = document.URL;
+    }
 </script>
 <script src="<?php echo $site_url ?>static/js/jquery-3.4.1.min.js"></script>
 <script>
