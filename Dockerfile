@@ -36,7 +36,15 @@ RUN echo 'server {\n\
     index index.php index.html;\n\
     \n\
     location / {\n\
-    try_files $uri $uri/ /index.php?$query_string;\n\
+    rewrite ^/single/([0-9]+)/([a-zA-Z0-9_-]+)$ /single.php?id=$1&name=$2 last;\n\
+    rewrite ^/page/([0-9]+)/([a-zA-Z0-9_-]+)$ /page.php?id=$1&slug=$2 last;\n\
+    rewrite ^/archive/([a-zA-Z0-9_-]+)$ /archive.php?type=$1 last;\n\
+    rewrite ^/game/([a-zA-Z0-9_-]+)$ /category.php?name=$1 last;\n\
+    rewrite ^/search/([a-zA-Z0-9_-]+)$ /category.php?query=$1 last;\n\
+    rewrite ^/user/([a-zA-Z0-9_-]+)$ /user.php?page=$1 last;\n\
+    rewrite ^/sitemap.xml$ /sitemap.php last;\n\
+    \n\
+    try_files $uri $uri/ $uri.php?$query_string /index.php?$query_string;\n\
     }\n\
     \n\
     location ~ \.php$ {\n\
