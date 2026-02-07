@@ -7,12 +7,8 @@ if (getenv('RAILWAY_ENVIRONMENT')) {
     $sql_db_name = getenv('MYSQLDATABASE') ?: 'railway';
     $sql_db_port = getenv('MYSQLPORT') ?: '3306';
 
-    $railway_domain = getenv('RAILWAY_PUBLIC_DOMAIN');
-    if ($railway_domain) {
-        $site_url = "https://" . $railway_domain . "/";
-    } else {
-        $site_url = "https://" . getenv('RAILWAY_STATIC_URL') . "/";
-    }
+    // تحديث الرابط ليكون الرابط المباشر لموقعك على Railway لضمان عمل الأزرار
+    $site_url = "https://zontal-demo-production.up.railway.app/";
 } else {
     // إعدادات الاتصال المحلية
     $sql_db_host = "localhost";
