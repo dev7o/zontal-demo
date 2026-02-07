@@ -52,6 +52,10 @@ RUN echo 'server {\n\
     try_files $uri $uri/ $uri.php?$query_string /index.php?$query_string;\n\
     }\n\
     \n\
+    location /admin/ {\n\
+    try_files $uri $uri/ $uri.php?$query_string /admin/index.php?$query_string;\n\
+    }\n\
+    \n\
     location ~ \.php$ {\n\
     fastcgi_pass 127.0.0.1:9000;\n\
     fastcgi_index index.php;\n\
