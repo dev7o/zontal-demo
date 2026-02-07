@@ -1,13 +1,4 @@
 <?php
-// +------------------------------------------------------------------------+
-// | @author: MvnThemes
-// | @name: Zontal - The Arcade Online HTML5 Game Playing Platform
-// | @author_email: mvk62015@gmail.com   
-// | @version: 1.0v
-// +------------------------------------------------------------------------+
-// | Zontal - The Arcade Online HTML5 Game Playing Platform
-// | Copyright (c) 2017 Zontal. All rights reserved.
-// 
 ?>
 <?php
 // Include Header 
@@ -22,17 +13,18 @@ if (isset($_GET) && isset($_GET['id'])) {
     $data = mysqli_fetch_assoc($query_run);
 }
 ?>
+
 <body class="bg-dark dark:bg-[#121317]">
-<?php // Include Main Header ?>
-<?php include("includes/main-h.php") ?>
-<?php // Page Container ?>
-<div class="container-zon px-4">
-<?php // Page Title ?>
-    <h1 class="title text-4xl mt-6 font-bold text-zinc-800 dark:text-gray-200"> <?=$data['title']?> </h1>
-    <?php // Page Main Content ?>
-    <div class="page-desc text-gray-700 dark:text-gray-400 mt-3">
-    <?=$data['content']?>
+    <?php // Include Main Header ?>
+    <?php include("includes/main-h.php") ?>
+    <?php // Page Container ?>
+    <div class="container-zon px-4">
+        <?php // Page Title ?>
+        <h1 class="title text-4xl mt-6 font-bold text-zinc-800 dark:text-gray-200"> <?= $data['title'] ?> </h1>
+        <?php // Page Main Content ?>
+        <div class="page-desc text-gray-700 dark:text-gray-400 mt-3">
+            <?= $data['content'] ?>
+        </div>
     </div>
-</div>
-<?php // End Page Container ?>
+    <?php // End Page Container ?>
 </body>

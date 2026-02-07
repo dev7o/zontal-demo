@@ -1,13 +1,4 @@
 <?php
-// +------------------------------------------------------------------------+
-// | @author: MvnThemes
-// | @name: Zontal - The Arcade Online HTML5 Game Playing Platform
-// | @author_email: mvk62015@gmail.com   
-// | @version: 1.0v
-// +------------------------------------------------------------------------+
-// | Zontal - The Arcade Online HTML5 Game Playing Platform
-// | Copyright (c) 2017 Zontal. All rights reserved.
-// 
 ?>
 <?php // Include Header 
 ?>
@@ -33,24 +24,42 @@ $type = Secure_DATA($_GET['type']);
         ?>
         <div id="zon_games" class="grid mt-16 mx-2"></div>
         <div class="zon-loader grid mt-16 mx-2">
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
-            <a class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
+            <a
+                class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
         </div>
     </div>
     </div>
