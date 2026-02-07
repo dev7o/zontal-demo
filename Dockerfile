@@ -35,6 +35,10 @@ RUN echo 'server {\n\
     root /var/www/html;\n\
     index index.php index.html;\n\
     \n\
+    location /admin/ {\n\
+    try_files $uri $uri/ $uri.php?$query_string /admin/index.php?$query_string;\n\
+    }\n\
+    \n\
     location / {\n\
     rewrite ^/login$ /login.php last;\n\
     rewrite ^/register$ /register.php last;\n\
@@ -52,10 +56,6 @@ RUN echo 'server {\n\
     try_files $uri $uri/ $uri.php?$query_string /index.php?$query_string;\n\
     }\n\
     \n\
-    location /admin/ {\n\
-    try_files $uri $uri/ $uri.php?$query_string /admin/index.php?$query_string;\n\
-    }\n\
-    \n\
     location ~ \.php$ {\n\
     fastcgi_pass 127.0.0.1:9000;\n\
     fastcgi_index index.php;\n\
@@ -69,7 +69,7 @@ RUN echo 'server {\n\
     }' > /etc/nginx/sites-available/default
 
 # Configure Supervisor
-RUN echo '[supervisord]\n\
+RUN echo "[supervisord]\n\
     nodaemon=true\n\
     \n\
     [program:php-fpm]\n\
@@ -83,7 +83,7 @@ RUN echo '[supervisord]\n\
     stderr_logfile_maxbytes=0\n\
     \n\
     [program:nginx]\n\
-    command=/usr/sbin/nginx -g "daemon off;"\n\
+    command=/usr/sbin/nginx -g \"daemon off;\"\n\
     autostart=true\n\
     autorestart=true\n\
     priority=10\n\
@@ -91,7 +91,7 @@ RUN echo '[supervisord]\n\
     stdout_logfile_maxbytes=0\n\
     stderr_logfile=/dev/stderr\n\
     stderr_logfile_maxbytes=0\n\
-    ' > /etc/supervisor/conf.d/supervisord.conf
+    " > /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 80
 
