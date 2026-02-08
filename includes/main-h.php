@@ -108,9 +108,9 @@
         </button>
         <a href="<?php echo $site_url ?>" class="no-search-component">
             <img class="dark:hidden block" mode-light width="130"
-                src="<?php echo $site_url ?>static/img/logo/logo-dark.png" alt="ZapPlay">
-            <img class="dark:block hidden" mode-dark width="130" src="<?php echo $site_url ?>static/img/logo/logo.png"
-                alt="ZapPlay">
+                src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_light') ?>" alt="ZapPlay">
+            <img class="dark:block hidden" mode-dark width="130"
+                src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_dark') ?>" alt="ZapPlay">
         </a>
     </div>
     <button class="fa fa-bars px-6 dark:text-gray-100 text-xl menu no-search-component"></button>
@@ -133,9 +133,11 @@
         <div class="logo flex justify-center">
             <a href="<?php echo $site_url ?>">
                 <img class="dark:hidden block" mode-light width="130"
-                    src="<?php echo $site_url ?>static/img/logo/logo-dark.png" alt="zapplay">
+                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_light') ?>"
+                    alt="zapplay">
                 <img class="dark:block hidden" mode-dark width="130"
-                    src="<?php echo $site_url ?>static/img/logo/logo.png" alt="zapplay">
+                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_dark') ?>"
+                    alt="zapplay">
             </a>
         </div>
         <ul class="w-full h-full overflow-y-scroll scroll-hidden ">

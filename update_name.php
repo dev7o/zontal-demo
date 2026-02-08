@@ -47,13 +47,19 @@ $new_tagline = "Welcome to ZapPlay";
 $new_title = "ZapPlay - Arcade HTML 5 Game Portal PHP Script";
 $new_desc = "ZapPlay - Arcade HTML 5 Game Portal PHP Script";
 $new_keywords = "ZapPlay Game Portal, Game Portal, Online Playing Games, HTML5 Games";
+$new_logo_light = "logo.png";
+$new_logo_dark = "logo-dark.png";
+$new_favicon = "favicon.ico";
 
 $query = "UPDATE zap_config SET 
     site_name = '$new_name', 
     profile_tagline = '$new_tagline',
     site_title = '$new_title',
     site_desc = '$new_desc',
-    site_keywords = '$new_keywords'
+    site_keywords = '$new_keywords',
+    site_logo_light = '$new_logo_light',
+    site_logo_dark = '$new_logo_dark',
+    site_favicon = '$new_favicon'
     WHERE id = 1";
 
 if (mysqli_query($con, $query)) {

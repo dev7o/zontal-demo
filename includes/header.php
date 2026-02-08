@@ -40,9 +40,10 @@
         <meta name="keywords" content="<?php echo Zap_Config('site_keywords') ?>">
     <?php } ?>
     <!-- Favicon  -->
-    <link rel="apple-touch-icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>">
-    <link rel="icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>">
-    <link rel="shortcut icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>"
+    <link rel="apple-touch-icon"
+        href="<?php echo $site_url ?>static/img/favicon/<?php echo Zap_Config('site_favicon') ?>">
+    <link rel="icon" href="<?php echo $site_url ?>static/img/favicon/<?php echo Zap_Config('site_favicon') ?>">
+    <link rel="shortcut icon" href="<?php echo $site_url ?>static/img/favicon/<?php echo Zap_Config('site_favicon') ?>"
         type="image/x-icon">
     <!-- Icon  -->
     <link rel="stylesheet" href="<?php echo $site_url ?>static/vendor/fontawesome/css/all.css">
