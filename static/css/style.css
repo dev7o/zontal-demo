@@ -1,1 +1,551 @@
-.container-zon{max-width:1550px;margin:auto}:root{--zapplay-bg-color:#fff;--cate-bg-color:#dcdcdc93;--zapplay-header-bg-color:#fff;--cate-text-color:#555;--search-bg-color:#dcdcdc93;--header-links-color:#777;--mc-color:#333;--menu-color:#333;--offcanvas-menu-bg-color:#fff;--text-zapplay-color:#000}.dark-mode{--zapplay-bg-color:#111;--cate-bg-color:#222;--cate-text-color:#dcdcdc;--zapplay-header-bg-color:#111;--search-bg-color:#00000049;--header-links-color:#dcdcdc;--mc-color:#dcdcdc;--menu-color:#dcdcdc;--offcanvas-menu-bg-color:#111;--text-zapplay-color:#dcdcdc}.text-zapplay{color:var(--text-zapplay-color)!important}.close-offcanvas-menu{color:var(--menu-color)!important}.header a,.light-color,.link-color a{color:var(--header-links-color)!important}.cat-box{background-color:var(--cate-bg-color)!important;color:var(--cate-text-color)!important}.menu{color:var(--menu-color);display:none!important}.mode-changer{color:var(--mc-color)}.search-bg{background-color:var(--search-bg-color)!important}.header{background-color:var(--zapplay-header-bg-color)!important}.cat-box:hover{background-color:#008cff!important;color:#fff!important}.bg-dark{background:var(--zapplay-bg-color)}.slider{overflow:scroll hidden;height:fit-content;width:100%;scroll-behavior:smooth}.slider .slide{width:calc(21rem * 6)}.slider::-webkit-scrollbar{display:none}._-50{transform:translateY(-50%)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));grid-gap:10px}.box{height:150px;background-color:#ccccccb0;border-radius:5px}.overlay:hover::before,.upward:hover h2{opacity:1}.overlay::before{content:'';position:absolute;left:0;bottom:0;height:100%;transition:.2s;width:100%;background-image:linear-gradient(to top,#000,transparent);opacity:0}.scale-up:hover{transform:scale(1.1)}.upward h2{opacity:0}.banner{height:90px;width:1200px;transform:scale(.8)}.controller{position:absolute;display:flex;top:50%;justify-content:space-between;z-index:10;width:100%;padding:0 10px}.c-button{background-color:rgb(0,0,0,.5);transition:.4s}.c-button:hover{background-color:#000}.sticky{position:sticky;top:0;z-index:99}.dropdown-content{overflow:hidden;transition:.5s;transform:translateY(-200%)}.dropdown:hover .dropdown-content{transform:translateY(0)}.dark-mode .mode-light,.mode-dark{display:none}.dark-mode .mode-dark{display:block}@media only screen and (max-width:1100px){.header ul li a,.opnal a{display:none}.search-bar{display:none!important}.menu{display:block!important}}.blur-overlay{background:rgba(255,255,255,.401);z-index:99;backdrop-filter:blur(10px);overflow:hidden}.offcanvas-menu{position:fixed;left:0;top:0;width:300px;background-color:var(--offcanvas-menu-bg-color);height:100%;z-index:999;box-sizing:border-box;padding:10px}@media screen and (max-width:700px){.offcanvas-menu{width:100%}.resp{flex-direction:column}}.flex-column,.flex-direction-column{flex-direction:column}.offcanvas{transform:translateX(-200%);z-index:999;transition:.2s}.offcanvas.active{transform:translateX(0)}@media screen and (max-width:1400px){.md-hidden{display:none}}.dark-color{color:var(--mc-color)!important}
+/* Modern ZapPlay CSS - Premium Gaming Portal Design */
+
+/* Enhanced Container */
+.container-zon {
+    max-width: 1550px;
+    margin: auto;
+}
+
+/* Modern Color Variables */
+:root {
+    --zapplay-bg-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --zapplay-bg-solid: #f8f9fa;
+    --cate-bg-color: rgba(255, 255, 255, 0.1);
+    --zapplay-header-bg-color: rgba(255, 255, 255, 0.95);
+    --cate-text-color: #2d3748;
+    --search-bg-color: rgba(255, 255, 255, 0.2);
+    --header-links-color: #4a5568;
+    --mc-color: #2d3748;
+    --menu-color: #2d3748;
+    --offcanvas-menu-bg-color: #ffffff;
+    --text-zapplay-color: #1a202c;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --game-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Colors */
+.dark-mode {
+    --zapplay-bg-color: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --zapplay-bg-solid: #0f0f1e;
+    --cate-bg-color: rgba(255, 255, 255, 0.05);
+    --cate-text-color: #e2e8f0;
+    --zapplay-header-bg-color: rgba(26, 26, 46, 0.95);
+    --search-bg-color: rgba(255, 255, 255, 0.1);
+    --header-links-color: #cbd5e0;
+    --mc-color: #e2e8f0;
+    --menu-color: #e2e8f0;
+    --offcanvas-menu-bg-color: #1a1a2e;
+    --text-zapplay-color: #f7fafc;
+    --game-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Typography */
+.text-zapplay {
+    color: var(--text-zapplay-color) !important;
+    font-weight: 600;
+}
+
+.close-offcanvas-menu {
+    color: var(--menu-color) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-offcanvas-menu:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #f56565 !important;
+}
+
+/* Modern Header with Glassmorphism */
+.header a,
+.light-color,
+.link-color a {
+    color: var(--header-links-color) !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.header a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+.header a:hover {
+    transform: translateY(-2px);
+}
+
+/* Enhanced Category Boxes with Glassmorphism */
+.cat-box {
+    background: var(--cate-bg-color) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--cate-text-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 12px 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cat-box:hover::before {
+    left: 100%;
+}
+
+.cat-box:hover {
+    background: var(--primary-gradient) !important;
+    color: #fff !important;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    border-color: transparent;
+}
+
+/* Menu */
+.menu {
+    color: var(--menu-color);
+    display: none !important;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu:hover {
+    transform: scale(1.1);
+}
+
+/* Enhanced Mode Changer */
+.mode-changer {
+    color: var(--mc-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.mode-changer:hover {
+    transform: rotate(180deg) scale(1.2);
+    color: #667eea;
+}
+
+/* Modern Search Bar */
+.search-bg {
+    background: var(--search-bg-color) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.search-bg:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+/* Header with Glassmorphism */
+.header {
+    background: var(--zapplay-header-bg-color) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Background */
+.bg-dark {
+    background: var(--zapplay-bg-solid);
+    position: relative;
+}
+
+body {
+    background: var(--zapplay-bg-solid);
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Enhanced Slider */
+.slider {
+    overflow: scroll hidden;
+    height: fit-content;
+    width: 100%;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.slider .slide {
+    width: calc(21rem * 6);
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+._-50 {
+    transform: translateY(-50%);
+}
+
+/* Modern Grid with Animations */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: 25px;
+    padding: 20px;
+}
+
+/* Enhanced Game Cards */
+.box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    height: 100% !important;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--game-card-shadow);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.box:hover::before {
+    opacity: 1;
+}
+
+.box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--hover-shadow);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Enhanced Overlay Effects */
+.overlay:hover::before,
+.upward:hover h2 {
+    opacity: 1;
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    background: linear-gradient(to top, rgba(102, 126, 234, 0.9), transparent);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Scale Up Animation */
+.scale-up {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-up:hover {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.upward h2 {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Banner */
+.banner {
+    height: 90px;
+    width: 1200px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.banner:hover {
+    transform: scale(0.85);
+}
+
+/* Controller Buttons */
+.controller {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    justify-content: space-between;
+    z-index: 10;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.c-button {
+    background: rgba(102, 126, 234, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.c-button:hover {
+    background: rgba(102, 126, 234, 1);
+    transform: scale(1.2);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+/* Sticky Header */
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+/* Dropdown */
+.dropdown-content {
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-200%);
+}
+
+.dropdown:hover .dropdown-content {
+    transform: translateY(0);
+}
+
+/* Mode Toggle */
+.dark-mode .mode-light,
+.mode-dark {
+    display: none;
+}
+
+.dark-mode .mode-dark {
+    display: block;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1100px) {
+
+    .header ul li a,
+    .opnal a {
+        display: none;
+    }
+
+    .search-bar {
+        display: none !important;
+    }
+
+    .menu {
+        display: block !important;
+    }
+}
+
+/* Enhanced Blur Overlay */
+.blur-overlay {
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 99;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Modern Offcanvas Menu */
+.offcanvas-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    background: var(--offcanvas-menu-bg-color);
+    height: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 700px) {
+    .offcanvas-menu {
+        width: 100%;
+    }
+
+    .resp {
+        flex-direction: column;
+    }
+}
+
+/* Flex Utilities */
+.flex-column,
+.flex-direction-column {
+    flex-direction: column;
+}
+
+/* Enhanced Offcanvas Animation */
+.offcanvas {
+    transform: translateX(-200%);
+    z-index: 999;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.offcanvas.active {
+    transform: translateX(0);
+}
+
+/* Responsive Utilities */
+@media screen and (max-width: 1400px) {
+    .md-hidden {
+        display: none;
+    }
+}
+
+.dark-color {
+    color: var(--mc-color) !important;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(102, 126, 234, 0.3);
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Add stagger animation to grid items */
+.grid>* {
+    animation-delay: calc(var(--index) * 0.05s);
+}
+
+/* Glowing effect for featured items */
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.5), 0 0 10px rgba(102, 126, 234, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.5);
+    }
+}
+
+.featured {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-gradient);
+}
