@@ -47,6 +47,9 @@
     <!-- Icon  -->
     <link rel="stylesheet" href="<?php echo $site_url ?>static/vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="<?php echo $site_url ?>static/vendor/bootstrap-icons/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?php echo $site_url ?>static/css/custom.css">
+    <link rel="stylesheet" href="<?php echo $site_url ?>static/css/style.css">
     <!-- Title  -->
     <?php if (isset($_GET) && isset($_GET['id']) && !empty($_GET['id']) && isset($_GET['name'])) { ?>
         <title><?php Game_Data(Secure_DATA($_GET['id']), 'game_name') ?></title>
