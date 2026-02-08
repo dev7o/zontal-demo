@@ -8,10 +8,10 @@ $row = ($page - 1) * $limit;
 $type = $_POST['type'];
 // Ready Query by Category Name
 if ($type == "popular") {
-    $query = "SELECT * from zon_games where game_played > 10 order by id desc limit $row,$limit";
+    $query = "SELECT * from zap_games where game_played > 10 order by id desc limit $row,$limit";
 }
 if ($type == "newest") {
-    $query = "SELECT * from zon_games order by id desc limit $row,$limit";
+    $query = "SELECT * from zap_games order by id desc limit $row,$limit";
 }
 
 $run = mysqli_query($con, $query);

@@ -16,7 +16,7 @@
                         <td class=" text-gray-400 py-2 text-xs text-right px-6">Action</td>
                     </thead>
                     <tbody class="py-4">
-                        <?php $run = mysqli_query($con, 'select * from zon_pages') ?>
+                        <?php $run = mysqli_query($con, 'select * from zap_pages') ?>
                         <?php while ($row = mysqli_fetch_assoc($run)) { ?>
                             <tr class="bg-[white] dark:bg-zinc-900 px-16 py-4 rounded-lg">
                                 <td class="text-xs px-6 text-gray-500"><?=$row['id']?></td>

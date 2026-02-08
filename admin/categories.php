@@ -1,7 +1,7 @@
 <?php $page = "Categories"; ?>
 <?php include "includes/config.php"; ?>
 <?php
-$sql = "select * from zon_category";
+$sql = "select * from zap_category";
 
 $run = mysqli_query($con, $sql);
 ?>

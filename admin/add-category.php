@@ -10,7 +10,7 @@ if (!empty($_GET['token_id']) && isset($_GET['action'])) {
 
 if (isset($token_id) && isset($action_type) && !empty($token_id)) {
 
-    $sql = "select * from zon_category where id=$token_id";
+    $sql = "select * from zap_category where id=$token_id";
     $run = mysqli_query($con, $sql);
     $data = mysqli_fetch_assoc($run);
 }

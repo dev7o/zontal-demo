@@ -26,8 +26,8 @@
         <meta property="og:image:width" content="630" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="<?php echo Zon_Config('site_name') ?>" />
-        <meta name="twitter:creator" content="<?php echo Zon_Config('site_name') ?>" />
+        <meta name="twitter:site" content="<?php echo Zap_Config('site_name') ?>" />
+        <meta name="twitter:creator" content="<?php echo Zap_Config('site_name') ?>" />
         <?php $text = Game_Data_Two(Secure_DATA($_GET['id']), 'game_name');
         $lower = strtolower($text);
         $revspace = str_replace(" ", "-", $lower); ?>
@@ -36,13 +36,13 @@
     <?php } elseif (isset($_GET['id'])) { ?>
         <meta name="description" content="<?php echo page_data($_GET['id'], 'desc') ?>">
     <?php } else { ?>
-        <meta name="description" content="<?php echo Zon_Config('site_desc') ?>">
-        <meta name="keywords" content="<?php echo Zon_Config('site_keywords') ?>">
+        <meta name="description" content="<?php echo Zap_Config('site_desc') ?>">
+        <meta name="keywords" content="<?php echo Zap_Config('site_keywords') ?>">
     <?php } ?>
     <!-- Favicon  -->
-    <link rel="apple-touch-icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_favicon') ?>">
-    <link rel="icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_favicon') ?>">
-    <link rel="shortcut icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_favicon') ?>"
+    <link rel="apple-touch-icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>">
+    <link rel="icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>">
+    <link rel="shortcut icon" href="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_favicon') ?>"
         type="image/x-icon">
     <!-- Icon  -->
     <link rel="stylesheet" href="<?php echo $site_url ?>static/vendor/fontawesome/css/all.css">
@@ -53,11 +53,11 @@
     <?php } elseif (isset($_GET['id'])) { ?>
         <title><?php echo page_data($_GET['id'], 'title') ?></title>
     <?php } else { ?>
-        <title><?php echo Zon_Config('site_title') ?></title>
+        <title><?php echo Zap_Config('site_title') ?></title>
     <?php } ?>
     <!-- Tailwind Css Framework of Css -->
     <script src="<?php echo $site_url ?>static/js/tailwind.js"></script>
-    <?php echo Zon_Config('head_code') ?>
+    <?php echo Zap_Config('head_code') ?>
     <style>
         .liked {
             background-color: #00f !important;
@@ -75,33 +75,33 @@
         }
 
         :root {
-            --zontal-bg-color: #fff;
+            --zapplay-bg-color: #fff;
             --act-button-text-color: #000;
             --cate-bg-color: #dcdcdc93;
             --act-button-bg-color: #dcdcdc;
-            --zontal-header-bg-color: #fff;
+            --zapplay-header-bg-color: #fff;
             --cate-text-color: #555;
             --search-bg-color: #dcdcdc93;
             --header-links-color: #777;
             --mc-color: #333;
-            --text-zontal-color: #000
+            --text-zapplay-color: #000
         }
 
         .dark-mode {
-            --zontal-bg-color: #111;
+            --zapplay-bg-color: #111;
             --act-button-text-color: #fff;
             --act-button-bg-color: #222 !important;
             --cate-bg-color: #222;
             --cate-text-color: #dcdcdc;
-            --zontal-header-bg-color: #111;
+            --zapplay-header-bg-color: #111;
             --search-bg-color: #00000049;
             --header-links-color: #dcdcdc;
             --mc-color: #dcdcdc;
-            --text-zontal-color: #dcdcdc
+            --text-zapplay-color: #dcdcdc
         }
 
-        .text-zontal {
-            color: var(--text-zontal-color) !important
+        .text-zapplay {
+            color: var(--text-zapplay-color) !important
         }
 
         .header a,
@@ -129,7 +129,7 @@
         }
 
         .header {
-            background-color: var(--zontal-header-bg-color) !important
+            background-color: var(--zapplay-header-bg-color) !important
         }
 
         .cat-box:hover {
@@ -138,7 +138,7 @@
         }
 
         .bg-dark {
-            background: var(--zontal-bg-color)
+            background: var(--zapplay-bg-color)
         }
 
         .slider {

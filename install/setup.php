@@ -45,8 +45,8 @@ if (isset($_POST) && !empty($_POST) && isset($_POST['install'])) {
             }
         }
 
-        $user_query = "INSERT INTO zon_users (`username`, `password`, `user_pic`, `is_admin`) values ('$admin_username', '$admin_password', 'user_pic.png', '1')";
-        $config_query = "INSERT INTO zon_config (`site_name`, `site_title`) values ('$site_name', '$site_title')";
+        $user_query = "INSERT INTO zap_users (`username`, `password`, `user_pic`, `is_admin`) values ('$admin_username', '$admin_password', 'user_pic.png', '1')";
+        $config_query = "INSERT INTO zap_config (`site_name`, `site_title`) values ('$site_name', '$site_title')";
 
         if (mysqli_query($con, $user_query) && mysqli_query($con, $config_query)) {
             $robots_txt_content = "
@@ -137,7 +137,7 @@ RewriteRule ^sitemap.xml sitemap.php
             fwrite($htaccess, $htaccess_content);
             fclose($file);
 
-            $query = "UPDATE zon_config SET `site_name`='$site_name', `site_title`='$site_title' ";
+            $query = "UPDATE zap_config SET `site_name`='$site_name', `site_title`='$site_title' ";
 
             if (mysqli_query($con, $query)) {
                 echo "<script>localStorage.clear()</script>";

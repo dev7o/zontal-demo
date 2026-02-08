@@ -17,7 +17,7 @@ if (isset($_POST['signup']) && isset($_POST)) {
     $_SESSION['name'] = $name;
     $_SESSION['username'] = $username;
 
-    $emailValidate = "select * from zon_users where email=$email";
+    $emailValidate = "select * from zap_users where email=$email";
 
 
     if (ValidateFields('email', $email)) {
@@ -26,7 +26,7 @@ if (isset($_POST['signup']) && isset($_POST)) {
         @header("location: ../register?username_msg=Username Already Exist");
     } else {
         $user_pic = "user_pic.png";
-        $query = "INSERT INTO zon_users (`name`, `email`, `username`, `password`, `user_pic`) VALUES ('$name', '$email', '$username', '$password', '$user_pic') ";
+        $query = "INSERT INTO zap_users (`name`, `email`, `username`, `password`, `user_pic`) VALUES ('$name', '$email', '$username', '$password', '$user_pic') ";
         if (mysqli_query($con, $query)) {
             @header("location: ../login");
             unset($_SESSION['email']);
@@ -43,7 +43,7 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $user_id = mysqli_real_escape_string($con, $_POST['id']);
 
-    $query = "select * from zon_users where email='$email_username' || username='$email_username' && password='$password'";
+    $query = "select * from zap_users where email='$email_username' || username='$email_username' && password='$password'";
     $row = mysqli_fetch_assoc(mysqli_query($con, $query));
     if (mysqli_num_rows(mysqli_query($con, $query)) !== 0) {
 
@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['is_admin_Loggedin'] = true;
             }
     
-            $user_data = mysqli_fetch_assoc(mysqli_query($con, "select * from zon_users where username='$email_username' || email='$email_username'"));
+            $user_data = mysqli_fetch_assoc(mysqli_query($con, "select * from zap_users where username='$email_username' || email='$email_username'"));
     
             $_SESSION['Loggedin_user_id'] = $user_data['id'];
     
@@ -76,7 +76,7 @@ if (isset($_POST) && isset($_POST['comment'])) {
     $user_id = Secure_DATA($_POST['user_id']);
     $url = Secure_DATA($_POST['url']);
 
-    $query = "insert into zon_comments (user_id, game_id, subject, date) values ($user_id, $game_id, '$subject', '$date')";
+    $query = "insert into zap_comments (user_id, game_id, subject, date) values ($user_id, $game_id, '$subject', '$date')";
 
     if (!empty($subject)) {
         if (mysqli_query($con, $query)) {
@@ -92,7 +92,7 @@ if (isset($_GET['page']) && isset($_GET['id']) && $_GET['page'] == 'comments') {
     $id = $_GET['id'];
     $redirect = $_GET['redirect'];
 
-    $query = "delete from zon_comments where id=$id";
+    $query = "delete from zap_comments where id=$id";
 
     if (mysqli_query($con, $query)) {
         @header("location: $redirect");
@@ -112,7 +112,7 @@ if (isset($_POST['change_settings'])) {
 
     $user_pic = '';
 
-    $query = "UPDATE zon_users set `name`='$name', `email`='$email', `username`='$username' where id=$id";
+    $query = "UPDATE zap_users set `name`='$name', `email`='$email', `username`='$username' where id=$id";
 
     if ($_FILES['avatar_img']) {
         $user_pic = rand(111111111, 999999999) . $_FILES['avatar_img']['name'];
@@ -122,15 +122,15 @@ if (isset($_POST['change_settings'])) {
     }
 
     if (!empty($password)) {
-        $query = "UPDATE zon_users set `name`='$name', `email`='$email', `username`='$username', `password`='$password' where id=$id";
+        $query = "UPDATE zap_users set `name`='$name', `email`='$email', `username`='$username', `password`='$password' where id=$id";
     } else {
         if ($_FILES['avatar_img']['error'] == 0) {
-            $query = "UPDATE zon_users set `name`='$name', `email`='$email', `username`='$username', `user_pic`='$user_pic' where id=$id";
+            $query = "UPDATE zap_users set `name`='$name', `email`='$email', `username`='$username', `user_pic`='$user_pic' where id=$id";
         }
     }
 
     if ($_FILES['avatar_img']['error'] == 0 && !empty($password)) {
-        $query = "UPDATE zon_users set `name`='$name', `email`='$email', `username`='$username', `password`='$password', `user_pic`='$user_pic' where id=$id";
+        $query = "UPDATE zap_users set `name`='$name', `email`='$email', `username`='$username', `password`='$password', `user_pic`='$user_pic' where id=$id";
     } 
 
     if (mysqli_query($con, $query)) {

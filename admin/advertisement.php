@@ -16,7 +16,7 @@
                     </thead>
                     <tbody class="py-4">
                         <?php
-                        $run = mysqli_query($con, "select * from zon_ads");
+                        $run = mysqli_query($con, "select * from zap_ads");
                         while ($row = mysqli_fetch_assoc($run)) {
                         ?>
                             <tr class="bg-[white] dark:bg-zinc-900 px-16 py-4 rounded-lg">

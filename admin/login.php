@@ -9,14 +9,14 @@
     </style>
 
     <head>
-        <title>Login To <?php echo Zon_Config('site_name') ?></title>
+        <title>Login To <?php echo Zap_Config('site_name') ?></title>
     </head>
     <div class="flex items-center px-4 h-[80vh]">
         <form class="login-form mx-auto my-12 w-96" action="<?php echo $site_url ?>admin/functions/login" method="post">
             <div class="logo flex items-center justify-center ">
                 <h1 class="text-4xl dark:text-gray-200 font-bold mb-16">Login To Admin</h1>
-                <!-- <img class="dark:block hidden" src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_dark'); ?>" alt="<?php echo Zon_Config('site_name') ?>">
-                <img class="dark:hidden block" src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_light'); ?>" alt="<?php echo Zon_Config('site_name') ?>"> -->
+                <!-- <img class="dark:block hidden" src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_dark'); ?>" alt="<?php echo Zap_Config('site_name') ?>">
+                <img class="dark:hidden block" src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_light'); ?>" alt="<?php echo Zap_Config('site_name') ?>"> -->
             </div>
             <?php if (isset($_GET) && isset($_GET['error'])) { ?>
                 <div class="text-center bg-red-600 rounded-lg py-3 text-white mb-7 ">

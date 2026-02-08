@@ -13,7 +13,7 @@ require_once("../function_general.php");
 
         // $total = +$view;
 
-        if (mysqli_query($con, "update zon_games set game_played=$current where id=$id")) {
+        if (mysqli_query($con, "update zap_games set game_played=$current where id=$id")) {
            echo "Success";
         }
 

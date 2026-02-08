@@ -39,13 +39,13 @@ if (!isset($_SESSION['Loggedin'])) {
                                 <div class="flex justify-between ">
                                     <div class="col flex flex-column text-center">
                                         <span class="dark:text-gray-300"><?php if (!empty($user_id)) {
-                                                                                echo Exist_Data("zon_likes", "user_id=$user_id");
+                                                                                echo Exist_Data("zap_likes", "user_id=$user_id");
                                                                             } ?></span>
                                         <span class="text-lg font-bold dark:text-white">likes</span>
                                     </div>
                                     <div class="col flex flex-column text-center">
                                         <span class="dark:text-gray-300"><?php if (!empty($user_id)) {
-                                                                                echo Exist_Data("zon_comments", "user_id=$user_id");
+                                                                                echo Exist_Data("zap_comments", "user_id=$user_id");
                                                                             } ?></span>
                                         <span class="text-lg font-bold dark:text-white">Comments</span>
                                     </div>
@@ -60,11 +60,11 @@ if (!isset($_SESSION['Loggedin'])) {
                             <h1 class="font-bold mb-6 text-lg dark:text-gray-300">Liked Games</h1>
                             <div class="grid w-full">
                                 <?php
-                                $query = "select * from zon_likes where user_id=$user_id";
+                                $query = "select * from zap_likes where user_id=$user_id";
                                 $run = mysqli_query($con, $query);
                                 while ($data = mysqli_fetch_assoc($run)) {
                                     $id = $data['game_id'];
-                                    $sql = "select * from zon_games where id=$id";
+                                    $sql = "select * from zap_games where id=$id";
                                     $run_sql = mysqli_query($con, $sql);
                                     while ($row = mysqli_fetch_assoc($run_sql)) {
                                 ?>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['Loggedin'])) {
                             <h1 class="font-bold mb-6 text-lg dark:text-gray-300">Comments</h1>
                             <div class="grid">
                                 <?php
-                                $query = "select * from zon_comments where user_id='$user_id'";
+                                $query = "select * from zap_comments where user_id='$user_id'";
                                 $run = mysqli_query($con, $query);
                                 while ($row = mysqli_fetch_assoc($run)) {
                                 ?>

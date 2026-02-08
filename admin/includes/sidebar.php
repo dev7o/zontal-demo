@@ -17,7 +17,7 @@ include("config.php");
     <div class="logo px-4 py-6">
         <a href="<?php echo $site_url ?>">
             <h3 class="fw-bold text-2xl dark:text-gray-100 uppercase text-gray-600 ">
-                <?php echo Zon_Config('site_name') ?>
+                <?php echo Zap_Config('site_name') ?>
             </h3>
         </a>
     </div>

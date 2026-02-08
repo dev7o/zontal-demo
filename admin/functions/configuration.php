@@ -15,7 +15,7 @@ if (isset($_POST) && isset($_POST['site_info'])) {
     $site_desc = Secure_DATA($_POST['site_desc']);
     $site_keywords = Secure_DATA($_POST['site_keywords']);
 
-    $sql = "UPDATE zon_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
+    $sql = "UPDATE zap_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
 
     if (isset($_FILES['logo']) && isset($_FILES) && $_FILES['logo']['error'] == 0) {
         $logo_name = rand(111111111, 999999999) . $_FILES['logo']['name'];
@@ -23,7 +23,7 @@ if (isset($_POST) && isset($_POST['site_info'])) {
 
         if (move_uploaded_file($logo_tmp_name, "../../static/img/logo/" . $logo_name)) {
             $logo_name = $logo_name;
-            $sql = "UPDATE zon_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_logo_light`='$logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
+            $sql = "UPDATE zap_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_logo_light`='$logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
         }
     }
 
@@ -33,7 +33,7 @@ if (isset($_POST) && isset($_POST['site_info'])) {
 
         if (move_uploaded_file($dark_logo_tmp_name, "../../static/img/logo/" . $dark_logo_name)) {
             $dark_logo_name = $dark_logo_name;
-            $sql = "UPDATE zon_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_logo_dark`='$dark_logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
+            $sql = "UPDATE zap_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_logo_dark`='$dark_logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
         }
     }
 
@@ -43,7 +43,7 @@ if (isset($_POST) && isset($_POST['site_info'])) {
 
         if (move_uploaded_file($favicon_logo_tmp_name, "../../static/img/logo/" . $favicon_logo_name)) {
             $favicon_logo_name = $favicon_logo_name;
-            $sql = "UPDATE zon_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_favicon`='$favicon_logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
+            $sql = "UPDATE zap_config set `site_name`='$site_name', `profile_tagline`='$profile_tagline', `site_favicon`='$favicon_logo_name', `head_code`='$head_code', `footer_content`='$footer_content', `site_title`='$site_title', `site_desc`='$site_desc', `site_keywords`='$site_keywords'";
         }
     }
 

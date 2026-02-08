@@ -5,11 +5,11 @@
                 <a href="<?php echo $site_url ?>">
                     <?php // This logo image will appear if the theme is in Light mode  ?>
                     <img class="dark:hidden block" mode-light width="130"
-                        src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_light') ?>"
+                        src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_light') ?>"
                         alt="ZapPlay">
                     <?php // This logo image will appear if the theme is in dark mode  ?>
                     <img class="dark:block hidden" mode-dark width="130"
-                        src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_dark') ?>"
+                        src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_dark') ?>"
                         alt="ZapPlay">
                 </a>
             </div>
@@ -18,7 +18,7 @@
                 <li><a class="block px-4 text-sm text-gray-500 dark:text-gray-100"
                         href="<?php echo $site_url ?>archive/newest">Newest</a></li>
                 <?php // if Popular Games Available Minimum 18 Then Show Most Popular Option  ?>
-                <?php if (Exist_Data("zon_games", "game_played > 50") > 18) { ?>
+                <?php if (Exist_Data("zap_games", "game_played > 50") > 18) { ?>
                     <li><a class="block px-4 text-sm text-gray-500 dark:text-gray-100"
                             href="<?php echo $site_url ?>archive/popular">Most Popular</a></li>
                 <?php } ?>
@@ -60,7 +60,7 @@
                             class="flex flex-column">
                             <a href="#" class="text-sm dark:text-gray-100"><?php User_Data('username') ?></a>
                             <span
-                                class="text-xs text-gray-400 whitespace-nowrap"><?php echo Zon_Config("profile_tagline") ?></span>
+                                class="text-xs text-gray-400 whitespace-nowrap"><?php echo Zap_Config("profile_tagline") ?></span>
                         </div>
 
                         <div
@@ -133,9 +133,9 @@
         <div class="logo flex justify-center">
             <a href="<?php echo $site_url ?>">
                 <img class="dark:hidden block" mode-light width="130"
-                    src="<?php echo $site_url ?>static/img/logo/logo-dark.png" alt="zontal">
+                    src="<?php echo $site_url ?>static/img/logo/logo-dark.png" alt="zapplay">
                 <img class="dark:block hidden" mode-dark width="130"
-                    src="<?php echo $site_url ?>static/img/logo/logo.png" alt="zontal">
+                    src="<?php echo $site_url ?>static/img/logo/logo.png" alt="zapplay">
             </a>
         </div>
         <ul class="w-full h-full overflow-y-scroll scroll-hidden ">
@@ -151,7 +151,7 @@
                 <a class="block px-4 py-2 uppercase text-xs text-gray-600 dark:text-gray-200 cursor-pointer">categories
                     &nbsp; &nbsp; <span class="fa fa-chevron-down text-xs"></span> </a>
                 <ul id="dropdown-content" class="dropdown-content">
-                    <?php $run = mysqli_query($con, "select * from zon_category");
+                    <?php $run = mysqli_query($con, "select * from zap_category");
                     while ($row = mysqli_fetch_assoc($run)) { ?>
                         <li><a href="<?php echo $site_url ?>game/<?= $row['slug'] ?>"
                                 class="block px-4 py-2 uppercase text-[10px] text-gray-600 dark:text-gray-200"><?= $row['name'] ?></a>

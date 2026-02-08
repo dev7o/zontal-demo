@@ -8,7 +8,7 @@ $user_id = User_Data_Two('id');
 <body class="bg-dark dark:bg-zinc-900">
     <?php include("includes/main-h.php") ?>
     <?php
-    $run = mysqli_query($con, "select * from zon_ads limit 1,1");
+    $run = mysqli_query($con, "select * from zap_ads limit 1,1");
     while ($row = mysqli_fetch_assoc($run)) {
     ?>
         <?php if ($row['status'] == 0) { ?>
@@ -25,7 +25,7 @@ $user_id = User_Data_Two('id');
                 <div class="games md-hidden">
                     <div class="grid w-80">
                         <?php
-                        $run = mysqli_query($con, "select * from zon_games order by id desc limit 18");
+                        $run = mysqli_query($con, "select * from zap_games order by id desc limit 18");
                         while ($row = mysqli_fetch_assoc($run)) {
                         ?>
                             <a href="<?php echo $site_url ?>single/<?= $row['id'] ?>/<?php
@@ -57,30 +57,30 @@ $user_id = User_Data_Two('id');
                                 <div class="star flex gap-2 text-sm mt-2">
                                     <?php //if (!empty($user_id)) { 
                                     ?>
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") == 0) { ?>
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") == 0) { ?>
                                         <!-- <span class="bi-star-fill text-orange-600"></span> -->
                                     <?php } ?>
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") == 1) { ?>
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") == 1) { ?>
                                         <span class="bi-star-fill text-orange-600"></span>
                                     <?php } ?>
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") == 2) { ?>
-                                        <span class="bi-star-fill text-orange-600"></span>
-                                        <span class="bi-star-fill text-orange-600"></span>
-                                    <?php } ?>
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") == 3) { ?>
-                                        <span class="bi-star-fill text-orange-600"></span>
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") == 2) { ?>
                                         <span class="bi-star-fill text-orange-600"></span>
                                         <span class="bi-star-fill text-orange-600"></span>
                                     <?php } ?>
-
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") == 4) { ?>
-                                        <span class="bi-star-fill text-orange-600"></span>
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") == 3) { ?>
                                         <span class="bi-star-fill text-orange-600"></span>
                                         <span class="bi-star-fill text-orange-600"></span>
                                         <span class="bi-star-fill text-orange-600"></span>
                                     <?php } ?>
 
-                                    <?php if (Exist_Data("zon_comments", "game_id=$game_id") > 5) { ?>
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") == 4) { ?>
+                                        <span class="bi-star-fill text-orange-600"></span>
+                                        <span class="bi-star-fill text-orange-600"></span>
+                                        <span class="bi-star-fill text-orange-600"></span>
+                                        <span class="bi-star-fill text-orange-600"></span>
+                                    <?php } ?>
+
+                                    <?php if (Exist_Data("zap_comments", "game_id=$game_id") > 5) { ?>
                                         <span class="bi-star-fill text-orange-600"></span>
                                         <span class="bi-star-fill text-orange-600"></span>
                                         <span class="bi-star-fill text-orange-600"></span>
@@ -96,27 +96,27 @@ $user_id = User_Data_Two('id');
                                 <div class="flex gap-2 ">
                                     <a onclick="toggleFullScreen()" class="bi text-md bi-arrows-fullscreen dark:text-gray-300 dark:bg-zinc-800 block bg-gray-200 py-3 px-3 rounded-lg hover:bg-blue-500 hover:text-gray-100"></a>
                                     <?php if (isset($_SESSION['Loggedin']) && !empty($user_id)) { ?>
-                                        <?php if (Exist_Data("zon_likes", "user_id=$user_id && game_id=$game_id") == 1 && !empty($user_id)) { ?>
+                                        <?php if (Exist_Data("zap_likes", "user_id=$user_id && game_id=$game_id") == 1 && !empty($user_id)) { ?>
                                             <div class="button text-center">
                                                 <a id="game_like" class="fa text-md block cursor-pointer  fa-thumbs-up  bg-blue-100  py-2 px-2 rounded-full w-8 text-center bg-blue-500 text-gray-100 hover:bg-blue-500 hover:text-gray-100"></a>
-                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zon_likes", "game_id=$game_id") ?></span>
+                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zap_likes", "game_id=$game_id") ?></span>
                                             </div>
                                         <?php } else { ?>
                                             <div class="button text-center">
                                                 <a id="game_like" class="fa text-md block cursor-pointer fa-thumbs-up bg-blue-100 py-2 px-2 rounded-full w-8 hover:bg-blue-500 hover:text-gray-100"></a>
-                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zon_likes", "game_id=$game_id") ?></span>
+                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zap_likes", "game_id=$game_id") ?></span>
                                             </div>
                                         <?php } ?>
 
-                                        <?php if (Exist_Data("zon_unlikes", "user_id=$user_id && game_id=$game_id") == 1 && !empty($user_id)) { ?>
+                                        <?php if (Exist_Data("zap_unlikes", "user_id=$user_id && game_id=$game_id") == 1 && !empty($user_id)) { ?>
                                             <div class="button text-center">
                                                 <a id="game_unlike" class="fa text-md block cursor-pointer fa-thumbs-down bg-blue-500 text-gray-100 py-2 px-2 rounded-full w-8 hover:bg-blue-500 hover:text-gray-100"></a>
-                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zon_unlikes", "game_id=$game_id") ?></span>
+                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zap_unlikes", "game_id=$game_id") ?></span>
                                             </div>
                                         <?php } else { ?>
                                             <div class="button text-center">
                                                 <a id="game_unlike" class="fa text-md block cursor-pointer fa-thumbs-down bg-blue-100 py-2 px-2 rounded-full w-8 hover:bg-blue-500 hover:text-gray-100"></a>
-                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zon_unlikes", "game_id=$game_id") ?></span>
+                                                <span class="mt-4 dark:text-gray-100"><?php echo Exist_Data("zap_unlikes", "game_id=$game_id") ?></span>
                                             </div>
                                         <?php } ?>
                                     <?php } ?>
@@ -137,13 +137,13 @@ $user_id = User_Data_Two('id');
                                 <button class="bg-blue-500 px-4 text-gray-200 h-12 rounded-md" type="submit" name="comment">Comment</button>
                             </form>
                         <?php } ?>
-                        <?php if (Exist_Data("zon_comments", "game_id=$game_id") > 0) { ?>
-                            <h1 class="text-xl text-gray-900 dark:text-gray-300 font-bold mt-6">Comments (<?php echo Exist_Data("zon_comments", "game_id=$game_id"); ?>)</h1>
+                        <?php if (Exist_Data("zap_comments", "game_id=$game_id") > 0) { ?>
+                            <h1 class="text-xl text-gray-900 dark:text-gray-300 font-bold mt-6">Comments (<?php echo Exist_Data("zap_comments", "game_id=$game_id"); ?>)</h1>
                         <?php } ?>
                         <div class="comments mt-6">
                             <?php
 
-                            $query = "select * from zon_comments where game_id=$game_id order by id desc";
+                            $query = "select * from zap_comments where game_id=$game_id order by id desc";
                             $run = mysqli_query($con, $query);
                             while ($row = mysqli_fetch_assoc($run)) {
                             ?>
@@ -162,7 +162,7 @@ $user_id = User_Data_Two('id');
                 <div class="games">
                     <div class="grid w-80 sm-hidden">
                         <?php
-                        $run = mysqli_query($con, "select * from zon_games order by id desc limit 18,18");
+                        $run = mysqli_query($con, "select * from zap_games order by id desc limit 18,18");
                         while ($row = mysqli_fetch_assoc($run)) {
                         ?>
                             <a href="<?php echo $site_url ?>single/<?= $row['id'] ?>/<?php

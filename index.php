@@ -20,7 +20,7 @@ $count = mysqli_num_rows($run);
         <?php // Categories Loop ?>
         <div class="cat-item-container scroll-hidden w-full overflow-x-scroll flex gap-4">
             <?php
-            $run = mysqli_query($con, "select * from zon_category");
+            $run = mysqli_query($con, "select * from zap_category");
             while ($row = mysqli_fetch_assoc($run)) {
                 ?>
                 <a href="<?php echo $site_url ?>game/<?= $row['slug'] ?>"
@@ -36,7 +36,7 @@ $count = mysqli_num_rows($run);
             <?php // First Game Container ?>
             <div class="grid">
                 <?php
-                $run_d = mysqli_query($con, "select * from zon_games where game_played > 50 order by id desc  limit 1");
+                $run_d = mysqli_query($con, "select * from zap_games where game_played > 50 order by id desc  limit 1");
                 while ($row = mysqli_fetch_assoc($run_d)) {
                     ?>
                     <a href="single/<?= $row['id'] ?>/<?php
@@ -56,7 +56,7 @@ $count = mysqli_num_rows($run);
                     </a>
                 <?php } ?>
                 <?php
-                $run = mysqli_query($con, "select * from zon_games order by id desc limit 1,63");
+                $run = mysqli_query($con, "select * from zap_games order by id desc limit 1,63");
                 while ($row = mysqli_fetch_assoc($run)) {
                     ?>
                     <a href="single/<?= $row['id'] ?>/<?php
@@ -80,7 +80,7 @@ $count = mysqli_num_rows($run);
 
             <?php // Start Advertisement Area No. 1 ?>
             <?php
-            $run = mysqli_query($con, "select * from zon_ads limit 1,1");
+            $run = mysqli_query($con, "select * from zap_ads limit 1,1");
             while ($row = mysqli_fetch_assoc($run)) {
                 ?>
                 <?php if ($row['status'] == 0) { ?>
@@ -97,7 +97,7 @@ $count = mysqli_num_rows($run);
             <h2 class="heading font-bold text-2xl mb-4 text-gray-800 mt-12 dark:text-gray-200">Action Games</h2>
             <div class="grid">
                 <?php
-                $run = mysqli_query($con, "SELECT * from zon_games where game_category='Action' && game_played > 50 order by id desc limit 1");
+                $run = mysqli_query($con, "SELECT * from zap_games where game_category='Action' && game_played > 50 order by id desc limit 1");
                 while ($row = mysqli_fetch_assoc($run)) {
                     ?>
                     <a href="single/<?= $row['id'] ?>/<?php
@@ -115,7 +115,7 @@ $count = mysqli_num_rows($run);
                     </a>
                 <?php } ?>
                 <?php
-                $run = mysqli_query($con, "SELECT * from zon_games where game_category='Action' order by id desc   limit 54");
+                $run = mysqli_query($con, "SELECT * from zap_games where game_category='Action' order by id desc   limit 54");
                 while ($row = mysqli_fetch_assoc($run)) {
                     ?>
                     <a href="single/<?= $row['id'] ?>/<?php
@@ -139,7 +139,7 @@ $count = mysqli_num_rows($run);
 
             <?php // Start Advertisement Area No. 2 ?>
             <?php
-            $run = mysqli_query($con, "select * from zon_ads limit 1,1");
+            $run = mysqli_query($con, "select * from zap_ads limit 1,1");
             while ($row = mysqli_fetch_assoc($run)) {
                 ?>
                 <?php if ($row['status'] == 0) { ?>
@@ -162,7 +162,7 @@ $count = mysqli_num_rows($run);
                     <?php // Showing Games By Category Action  ?>
                     <div class="grid">
                         <?php
-                        $run = mysqli_query($con, "SELECT * from zon_games where game_category='Action' order by id desc   limit 18");
+                        $run = mysqli_query($con, "SELECT * from zap_games where game_category='Action' order by id desc   limit 18");
                         while ($row = mysqli_fetch_assoc($run)) {
                             ?>
                             <a href="single/<?= $row['id'] ?>/<?php
@@ -191,7 +191,7 @@ $count = mysqli_num_rows($run);
                     </div>
                     <div class="grid">
                         <?php
-                        $run = mysqli_query($con, "SELECT * from zon_games where game_category='Shooting' order by id desc   limit 18");
+                        $run = mysqli_query($con, "SELECT * from zap_games where game_category='Shooting' order by id desc   limit 18");
                         while ($row = mysqli_fetch_assoc($run)) {
                             ?>
                             <a href="single/<?= $row['id'] ?>/<?php
@@ -220,7 +220,7 @@ $count = mysqli_num_rows($run);
                     </div>
                     <div class="grid">
                         <?php
-                        $run = mysqli_query($con, "SELECT * from zon_games where game_category='Puzzles' order by id desc   limit 18");
+                        $run = mysqli_query($con, "SELECT * from zap_games where game_category='Puzzles' order by id desc   limit 18");
                         while ($row = mysqli_fetch_assoc($run)) {
                             ?>
                             <a href="single/<?= $row['id'] ?>/<?php

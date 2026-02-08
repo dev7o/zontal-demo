@@ -52,7 +52,7 @@ if (isset($_POST['add_user']) && isset($_POST)) {
         $usern = true;
     }
 
-    $query = "INSERT INTO zon_users (`name`, `email`, `username`, `password`, `user_pic`, `status`) VALUES ('$name', '$email', '$username', '$password', '$user_pic', $user_status) ";
+    $query = "INSERT INTO zap_users (`name`, `email`, `username`, `password`, `user_pic`, `status`) VALUES ('$name', '$email', '$username', '$password', '$user_pic', $user_status) ";
 
     if ($usern == true && $emil == true) {
         if (mysqli_query($con, $query)) {
@@ -105,7 +105,7 @@ if (isset($_POST['update_user']) && isset($_POST)) {
         $usern = true;
     }
 
-    $query = "UPDATE  zon_users SET `name`='$name', `email`='$email', `username`='$username', `password`='$password', `status`=$user_status where id=$id ";
+    $query = "UPDATE  zap_users SET `name`='$name', `email`='$email', `username`='$username', `password`='$password', `status`=$user_status where id=$id ";
 
     if ($_FILES['user_pic']['error'] == 0) {
         $file_name = rand(111111111, 99999999) . $_FILES['user_pic']['name'];
@@ -114,7 +114,7 @@ if (isset($_POST['update_user']) && isset($_POST)) {
         if (move_uploaded_file($file_tmp, "../../static/img/" . $file_name)) {
             $user_pic = $file_name;
 
-            $query = "UPDATE  zon_users SET `name`='$name', `email`='$email', `username`='$username', `password`='$password', `user_pic`='$user_pic', `status`=$user_status where id=$id  ";
+            $query = "UPDATE  zap_users SET `name`='$name', `email`='$email', `username`='$username', `password`='$password', `user_pic`='$user_pic', `status`=$user_status where id=$id  ";
         }
     }
     if ($usern == true && $emil == true && $user == true) {

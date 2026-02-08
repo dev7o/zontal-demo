@@ -10,7 +10,7 @@ if (!empty($_GET['token_id']) && isset($_GET['action'])) {
 
 if (isset($token_id) && isset($action_type) && !empty($token_id)) {
 
-    $sql = "select * from zon_games where id=$token_id";
+    $sql = "select * from zap_games where id=$token_id";
     $run = mysqli_query($con, $sql);
     $data = mysqli_fetch_assoc($run);
 }
@@ -67,7 +67,7 @@ if (isset($token_id) && isset($action_type) && !empty($token_id)) {
                                 <label class="text-gray-500 uppercase text-[10px] mb-2">game category</label>
                                 <select name="game_category" class="py-[15px] text-gray-500 outline-none focus:outline focus:outline-blue-500 transition-sm w-full  px-3 text-xs" id="">
                                     <?php
-                                    $query = mysqli_query($con, "select * from zon_category");
+                                    $query = mysqli_query($con, "select * from zap_category");
                                     while ($row = mysqli_fetch_assoc($query)) { ?>
                                         <option <?php if(!empty($token_id)) { if ($row['name'] == $data['game_category']) { echo "selected"; } } ?> value="<?= $row['name'] ?>"><?= $row['name'] ?></option>
                                     <?php } ?>

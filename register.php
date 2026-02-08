@@ -13,12 +13,12 @@
             <div class="logo flex items-center justify-center ">
                 <?php // This logo image will appear if the theme is in dark mode  ?>
                 <img class="dark:block hidden"
-                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_dark'); ?>"
-                    alt="<?php echo Zon_Config('site_name') ?>">
+                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_dark'); ?>"
+                    alt="<?php echo Zap_Config('site_name') ?>">
                 <?php // This logo image will appear if the theme is in light mode  ?>
                 <img class="dark:hidden block"
-                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zon_Config('site_logo_light'); ?>"
-                    alt="<?php echo Zon_Config('site_name') ?>">
+                    src="<?php echo $site_url ?>static/img/logo/<?php echo Zap_Config('site_logo_light'); ?>"
+                    alt="<?php echo Zap_Config('site_name') ?>">
             </div>
 
             <?php

@@ -15,7 +15,7 @@
                         <td class=" text-gray-400 py-2 text-xs text-right px-6"></td>
                     </thead>
                     <tbody class="py-0">
-                        <?php $run = mysqli_query($con, 'select * from zon_users') ?>
+                        <?php $run = mysqli_query($con, 'select * from zap_users') ?>
                         <?php while ($row = mysqli_fetch_assoc($run)) { ?>
                             <tr class="bg-[white] dark:bg-zinc-900 px-16 <?php if($row['status'] == 1) { echo "border-2 border-red-800 "; } ?> ">
                                 <td class="text-xs text-gray-500 px-4 ">#<?= $row['id'] ?></td>

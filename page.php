@@ -8,7 +8,7 @@ include("includes/header.php");
 if (isset($_GET) && isset($_GET['id'])) {
     // Getting Page Data by Page id
     $id = Secure_DATA($_GET['id']);
-    $query = "select * from zon_pages where id=$id";
+    $query = "select * from zap_pages where id=$id";
     $query_run = mysqli_query($con, $query);
     $data = mysqli_fetch_assoc($query_run);
 }

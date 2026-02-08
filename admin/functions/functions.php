@@ -27,7 +27,7 @@ if (isset($_POST['upload_game'])) {
         $game_image_url = mysqli_real_escape_string($con, $_POST['game_image_url']);
     }
 
-    $sql = "INSERT INTO `zon_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', '$game_status', '$game_category')";
+    $sql = "INSERT INTO `zap_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', '$game_status', '$game_category')";
 
     if (mysqli_query($con, $sql)) {
         @header("location: ../games.php");
@@ -56,7 +56,7 @@ if (isset($_POST['update_game'])) {
         $game_image_url = mysqli_real_escape_string($con, $_POST['game_image_url']);
     }
 
-    $sql = "UPDATE `zon_games` SET `game_name`='$game_name', `game_description`='$game_desc', `game_image_url`='$game_image_url', `game_url`='$game_frame_url', `game_published`='$game_status', `game_category`='$game_category' WHERE id=$game_id";
+    $sql = "UPDATE `zap_games` SET `game_name`='$game_name', `game_description`='$game_desc', `game_image_url`='$game_image_url', `game_url`='$game_frame_url', `game_published`='$game_status', `game_category`='$game_category' WHERE id=$game_id";
 
     if (mysqli_query($con, $sql)) {
         @header("location: ../games.php");
@@ -68,7 +68,7 @@ if (isset($_POST['add_category'])) {
     $category_name = mysqli_real_escape_string($con, $_POST['game_category']);
     $category_slug = mysqli_real_escape_string($con, $_POST['game_category_slug']);
 
-    if (mysqli_query($con, "insert into zon_category (`name`, `slug`) values ('$category_name' , '$category_slug') ")) {
+    if (mysqli_query($con, "insert into zap_category (`name`, `slug`) values ('$category_name' , '$category_slug') ")) {
         @header("location: ../categories.php");
     }
 }
@@ -80,7 +80,7 @@ if (isset($_POST['update_category'])) {
     $category_slug = mysqli_real_escape_string($con, $_POST['game_category_slug']);
     $category_id = mysqli_real_escape_string($con, $_POST['category_id']);
 
-    if (mysqli_query($con, "update zon_category set `name`='$category_name', `slug`='$category_slug' where id=$category_id")) {
+    if (mysqli_query($con, "update zap_category set `name`='$category_name', `slug`='$category_slug' where id=$category_id")) {
         @header("location: ../categories.php");
     }
 }
@@ -95,7 +95,7 @@ if (isset($_GET) && !empty($_GET['token_id']) && !empty($_GET['action']) && !emp
         $token_id = $_GET['token_id'];
 
         if ($action == 'delete') {
-            if (mysqli_query($con, "DELETE FROM zon_games where id=$token_id")) {
+            if (mysqli_query($con, "DELETE FROM zap_games where id=$token_id")) {
                 @header("location: ../games.php");
             }
         }
@@ -110,7 +110,7 @@ if (isset($_GET) && !empty($_GET['token_id']) && !empty($_GET['action']) && !emp
         $token_id = $_GET['token_id'];
 
         if ($action == 'delete') {
-            if (mysqli_query($con, "delete from zon_category where id=$token_id")) {
+            if (mysqli_query($con, "delete from zap_category where id=$token_id")) {
                 @header("location: ../categories.php");
             }
         } else {
@@ -131,7 +131,7 @@ if (isset($_GET) && !empty($_GET['token_id']) && !empty($_GET['action']) && !emp
         $token_id = $_GET['token_id'];
 
         if ($action == 'delete') {
-            if (mysqli_query($con, "delete from zon_games where id=$token_id")) {
+            if (mysqli_query($con, "delete from zap_games where id=$token_id")) {
                 @header("location: $url");
             }
         } else {
@@ -151,10 +151,10 @@ if (isset($_POST) && isset($_POST['ads_up_add'])) {
     $ad_code = $_POST['ad_code'];
     $ad_off = $_POST['ad_contr'];
 
-    $sql = "UPDATE zon_ads set `code`='$ad_code', `ad_name`='$ad_name', `status`= 0 where id=$id";
+    $sql = "UPDATE zap_ads set `code`='$ad_code', `ad_name`='$ad_name', `status`= 0 where id=$id";
 
     if (!empty($ad_off)) {
-        $sql = "UPDATE zon_ads set `code`='$ad_code', `ad_name`='$ad_name', `status`=1 where id=$id";
+        $sql = "UPDATE zap_ads set `code`='$ad_code', `ad_name`='$ad_name', `status`=1 where id=$id";
     }
 
 
@@ -170,7 +170,7 @@ if (isset($_POST) && isset($_POST['add_page'])) {
     $page_desc = mysqli_escape_string($con, $_POST['page_desc']);
     $page_content = mysqli_escape_string($con, $_POST['page_content']);
 
-    $query = "INSERT INTO `zon_pages` (`title`, `desc`, `content`) VALUES ('$page_title', '$page_desc', '$page_content') ";
+    $query = "INSERT INTO `zap_pages` (`title`, `desc`, `content`) VALUES ('$page_title', '$page_desc', '$page_content') ";
 
     if (mysqli_query($con, $query)) {
         @header("location: ../pages");
@@ -186,7 +186,7 @@ if (isset($_GET) && !empty($_GET['token_id']) && !empty($_GET['action']) && !emp
         $token_id = $_GET['token_id'];
 
         if ($action == 'delete') {
-            if (mysqli_query($con, "delete from zon_pages where id=$token_id")) {
+            if (mysqli_query($con, "delete from zap_pages where id=$token_id")) {
                 @header("location: $url");
             }
         } else {
@@ -206,7 +206,7 @@ if (isset($_POST) && isset($_POST['update_page'])) {
     $page_content = mysqli_escape_string($con, $_POST['page_content']);
     $id = mysqli_escape_string($con, $_POST['id']);
 
-    $query = "UPDATE `zon_pages` SET `title`='$page_title', `desc`='$page_desc', `content`='$page_content' where id=$id";
+    $query = "UPDATE `zap_pages` SET `title`='$page_title', `desc`='$page_desc', `content`='$page_content' where id=$id";
 
     if (mysqli_query($con, $query)) {
         @header("location: ../pages");
@@ -222,7 +222,7 @@ if (isset($_GET) && !empty($_GET['token_id']) && !empty($_GET['action']) && !emp
         $token_id = $_GET['token_id'];
 
         if ($action == 'delete') {
-            if (mysqli_query($con, "delete from zon_comments where id=$token_id")) {
+            if (mysqli_query($con, "delete from zap_comments where id=$token_id")) {
                 @header("location: $url");
             }
         } else {

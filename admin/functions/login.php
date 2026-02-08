@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     $email_username = mysqli_real_escape_string($con, $_POST['username_email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $query = "select * from zon_users where username='$email_username' && password='$password'";
+    $query = "select * from zap_users where username='$email_username' && password='$password'";
     $row = mysqli_fetch_assoc(mysqli_query($con, $query));
     if (mysqli_num_rows(mysqli_query($con, $query)) !== 0) {
         if ($row['is_admin'] == 1) {

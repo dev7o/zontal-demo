@@ -9,7 +9,7 @@
                 <div class="box bg-[white] dark:bg-zinc-900 rounded-md p-4 w-full">
                     <span class="uppercase text-gray-500 text-xs ">Game</span>
                     <div class="flex justify-between">
-                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zon_games") ?></span>
+                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zap_games") ?></span>
                         <span class="bi-activity text-3xl text-gray-400"></span>
                     </div>
                     <span class="text-gray-500 text-xs ">There are total games</span>
@@ -17,7 +17,7 @@
                 <div class="box bg-[white] dark:bg-zinc-900 rounded-md p-4 w-full">
                     <span class="uppercase text-gray-500 text-xs ">category</span>
                     <div class="flex justify-between">
-                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zon_category") ?></span>
+                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zap_category") ?></span>
                         <span class="bi-activity text-4xl text-gray-400"></span>
                     </div>
                     <span class="text-gray-500 text-xs whitespace-nowrap">There are total category</span>
@@ -25,7 +25,7 @@
                 <div class="box bg-[white] dark:bg-zinc-900 rounded-md w-full p-4">
                     <span class="uppercase text-gray-500 text-xs ">user</span>
                     <div class="flex justify-between">
-                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zon_users") ?></span>
+                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zap_users") ?></span>
                         <span class="bi-activity text-3xl text-gray-400"></span>
                     </div>
                     <span class="text-gray-500 text-xs whitespace-nowrap">There are total user</span>
@@ -33,7 +33,7 @@
                 <div class="box bg-[white] dark:bg-zinc-900 rounded-md w-full p-4">
                     <span class="uppercase text-gray-500 text-xs ">comment</span>
                     <div class="flex justify-between">
-                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zon_comments") ?></span>
+                        <span class="font-bold text-2xl dark:text-gray-100"><?php echo Total_Items("zap_comments") ?></span>
                         <span class="bi-activity text-3xl text-gray-400"></span>
                     </div>
                     <span class="text-gray-500 text-xs whitespace-nowrap">There are total comment</span>
@@ -47,7 +47,7 @@
                         <td class="py-2 text-xs text-right"></td>
                     </thead>
                     <tbody class="rounded-md ">
-                        <?php $run = mysqli_query($con, 'select * from zon_games order by id desc limit 10') ?>
+                        <?php $run = mysqli_query($con, 'select * from zap_games order by id desc limit 10') ?>
                         <?php while ($row = mysqli_fetch_assoc($run)) { ?>
                             <?php if ($row['game_status'] == 0) { ?>
                                 <tr class="bg-[white] dark:bg-zinc-900 px-16 ">

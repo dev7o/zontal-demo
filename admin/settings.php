@@ -22,13 +22,13 @@
                             <label class="text-gray-500 uppercase text-[10px] mb-2">Site name</label>
                             <input
                                 class="py-[15px] text-gray-500 dark:bg-zinc-900 outline-none focus:outline focus:outline-blue-500 transition-sm  px-3 text-xs"
-                                type="text" value="<?php echo Zon_Config('site_name')?>" name="site_name" placeholder="Site name">
+                                type="text" value="<?php echo Zap_Config('site_name')?>" name="site_name" placeholder="Site name">
                         </div>
                         <div class="input-group flex flex-column">
                             <label class="text-gray-500 uppercase text-[10px] mb-2">Profile tagline</label>
                             <input
                                 class="py-[15px] text-gray-500 dark:bg-zinc-900 outline-none focus:outline focus:outline-blue-500 transition-sm  px-3 text-xs"
-                                type="text" value="<?php echo Zon_Config('profile_tagline')?>" name="profile_tagline" placeholder="Site name">
+                                type="text" value="<?php echo Zap_Config('profile_tagline')?>" name="profile_tagline" placeholder="Site name">
                         </div>
                     </div>
                     <div class="flex gap-6 mt-6">
@@ -58,14 +58,14 @@
                         <label class="text-gray-500 uppercase text-[10px] mb-2">head custom code</label>
                         <textarea
                             class="py-2 resize-none  text-gray-500 dark:bg-zinc-900 border-2 dark:border-zinc-800 text-gray-400 bg-[white] border-gray-200 outline-none focus:outline focus:outline-blue-500 transition-sm text-xs px-2"
-                            name="head_code" cols="50" rows="16"><?php echo Zon_Config('head_code')?></textarea>
+                            name="head_code" cols="50" rows="16"><?php echo Zap_Config('head_code')?></textarea>
                     </div>
                     <div class="input-group flex flex-column mt-6">
                         <label class="text-gray-500 uppercase text-[10px] mb-2">footer content</label>
                         <textarea id="editor"
                             class="py-2 resize-none  text-gray-500 dark:bg-zinc-900 border-2 text-gray-400 bg-[white] border-gray-200 outline-none focus:outline focus:outline-blue-500 transition-sm text-xs px-2"
                             name="footer_content" cols="50"
-                            rows="16"><?php echo Zon_Config('footer_content')?></textarea>
+                            rows="16"><?php echo Zap_Config('footer_content')?></textarea>
                     </div>
                 </div>
 
@@ -75,21 +75,21 @@
                         <label class="text-gray-500 uppercase text-[10px] mb-2">Site title</label>
                         <input
                             class="py-[15px] text-gray-500 dark:bg-zinc-900 outline-none focus:outline focus:outline-blue-500 transition-sm  px-3 text-xs"
-                            type="text" value="<?php echo Zon_Config('site_title')?>" name="site_title" placeholder="Site title">
+                            type="text" value="<?php echo Zap_Config('site_title')?>" name="site_title" placeholder="Site title">
                     </div>
 
                     <div class="input-group flex flex-column mt-6">
                         <label class="text-gray-500 uppercase text-[10px] mb-2">Site Description</label>
                         <input
                             class="py-[15px] text-gray-500 dark:bg-zinc-900 outline-none focus:outline focus:outline-blue-500 transition-sm  px-3 text-xs"
-                            type="text" value="<?php echo Zon_Config('site_desc')?>" name="site_desc" placeholder="Site Description">
+                            type="text" value="<?php echo Zap_Config('site_desc')?>" name="site_desc" placeholder="Site Description">
                     </div>
 
                     <div class="input-group flex flex-column mt-6">
                         <label class="text-gray-500 uppercase text-[10px] mb-2">Site Keywords</label>
                         <textarea
                             class="py-[15px] dark:bg-zinc-900 text-gray-500 outline-none focus:outline focus:outline-blue-500 transition-sm  px-3 text-xs"
-                            type="text" placeholder="Site Keywords" name="site_keywords"><?php echo Zon_Config('site_keywords')?></textarea>
+                            type="text" placeholder="Site Keywords" name="site_keywords"><?php echo Zap_Config('site_keywords')?></textarea>
                         <label class="text-gray-500 text-[10px] mb-2 mt-2">For Better Ranking in Search Engines</label>
                     </div>
 

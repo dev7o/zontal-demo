@@ -22,7 +22,7 @@ $type = Secure_DATA($_GET['type']);
         <h1 class="font-bold text-4xl mb-3 dark:text-gray-200 mt-12 text-center capitalize"><?php echo $type ?></h1>
         <?php // Game Showing Container 
         ?>
-        <div id="zon_games" class="grid mt-16 mx-2"></div>
+        <div id="zap_games" class="grid mt-16 mx-2"></div>
         <div class="zon-loader grid mt-16 mx-2">
             <a
                 class="box block relative dark:bg-zinc-800 bg-gray-200  overflow-hidden rounded-xl overflow-hidden upward transition duration-300"></a>
@@ -88,7 +88,7 @@ $type = Secure_DATA($_GET['type']);
             type: t_n
         }, (data) => {
             // console.log(data);
-            $("#zon_games").append(data);
+            $("#zap_games").append(data);
             $(".zon-loader").hide();
         });
 

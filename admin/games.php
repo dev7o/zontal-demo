@@ -5,7 +5,7 @@
 $per_page = 20;
 
 
-$total_game = mysqli_num_rows(mysqli_query($con, "select * from zon_games"));
+$total_game = mysqli_num_rows(mysqli_query($con, "select * from zap_games"));
 $total = $total_game / $per_page;
 $total = intval($total);
 
@@ -13,10 +13,10 @@ if (isset($_GET) && isset($_GET['page'])) {
     $page_no = $_GET['page'];
     $cal = ($page_no - 0) * $per_page;
 
-    $sql = "select * from zon_games order by id desc limit $cal, $per_page";
+    $sql = "select * from zap_games order by id desc limit $cal, $per_page";
 } else {
     $page_no = 0;
-    $sql = "select * from zon_games order by id desc limit 10";
+    $sql = "select * from zap_games order by id desc limit 10";
 }
 
 

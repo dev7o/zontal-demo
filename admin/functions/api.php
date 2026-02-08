@@ -54,10 +54,10 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
             $game_status = 0;
             $cate_slug = strtolower($game_category);
 
-            $sql = "INSERT INTO `zon_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
-            $cate_sql = "INSERT INTO `zon_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
+            $sql = "INSERT INTO `zap_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
+            $cate_sql = "INSERT INTO `zap_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
 
-            $check_game_name = "select * from zon_games where game_name='$game_name'";
+            $check_game_name = "select * from zap_games where game_name='$game_name'";
 
             if (!empty($game_image_url)) {
                 if (mysqli_num_rows(mysqli_query($con, $check_game_name)) !== 0) {
@@ -67,7 +67,7 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
                     }
                 }
 
-                $check_category_name = "select * from zon_category where name='$game_category'";
+                $check_category_name = "select * from zap_category where name='$game_category'";
                 if (mysqli_num_rows(mysqli_query($con, $check_category_name)) !== 0) {
                 } else {
                     if (mysqli_query($con, $cate_sql)) {
@@ -138,10 +138,10 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
             $game_status = 0;
             $cate_slug = strtolower($game_category);
 
-            $sql = "INSERT INTO `zon_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
-            $cate_sql = "INSERT INTO `zon_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
+            $sql = "INSERT INTO `zap_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
+            $cate_sql = "INSERT INTO `zap_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
 
-            $check_game_name = "select * from zon_games where game_name='$game_name'";
+            $check_game_name = "select * from zap_games where game_name='$game_name'";
 
             if (!empty($game_image_url)) {
                 if (mysqli_num_rows(mysqli_query($con, $check_game_name)) !== 0) {
@@ -150,7 +150,7 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
                     }
                 }
 
-                $check_category_name = "select * from zon_category where name='$game_category'";
+                $check_category_name = "select * from zap_category where name='$game_category'";
                 if (mysqli_num_rows(mysqli_query($con, $check_category_name)) !== 0) {
                 } else {
                     if (mysqli_query($con, $cate_sql)) {
@@ -214,10 +214,10 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
             $game_status = 0;
             $cate_slug = strtolower($game_category);
 
-            $sql = "INSERT INTO `zon_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
-            $cate_sql = "INSERT INTO `zon_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
+            $sql = "INSERT INTO `zap_games`(`game_name`, `game_description`, `game_image_url`, `game_url`, `game_published`, `game_category`) VALUES ('$game_name','$game_desc','$game_image_url','$game_frame_url', $game_status, '$game_category')";
+            $cate_sql = "INSERT INTO `zap_category`(`name`, `slug`) VALUES ('$game_category', '$cate_slug')";
 
-            $check_game_name = "select * from zon_games where game_name='$game_name'";
+            $check_game_name = "select * from zap_games where game_name='$game_name'";
 
             if (!empty($game_image_url)) {
                 if (mysqli_num_rows(mysqli_query($con, $check_game_name)) !== 0) {
@@ -226,7 +226,7 @@ if (isset($_POST) && isset($_POST['add_games_from_api']) && isset($_POST['platfo
                     }
                 }
 
-                $check_category_name = "select * from zon_category where name='$game_category'";
+                $check_category_name = "select * from zap_category where name='$game_category'";
                 if (mysqli_num_rows(mysqli_query($con, $check_category_name)) !== 0) {
                 } else {
                     if (mysqli_query($con, $cate_sql)) {

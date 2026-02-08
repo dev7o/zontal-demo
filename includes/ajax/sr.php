@@ -7,7 +7,7 @@ $row = ($page - 1) * $limit;
 
 $query = $_POST['name'];
 // Ready Query by Category Name
-$query = "SELECT * from zon_games where game_name like '%$query%' order by id desc limit $row,$limit";
+$query = "SELECT * from zap_games where game_name like '%$query%' order by id desc limit $row,$limit";
 $run = mysqli_query($con, $query);
 $game = mysqli_fetch_all($run);
 

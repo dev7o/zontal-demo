@@ -6,7 +6,7 @@
 <?php
 $name = Secure_DATA($_GET['name']);
 // Ready Query by Category Name
-$query = "SELECT * from zon_games where game_category='$name' order by id desc";
+$query = "SELECT * from zap_games where game_category='$name' order by id desc";
 ?>
 
 <body class="bg-dark dark:bg-zinc-900">
@@ -17,9 +17,9 @@ $query = "SELECT * from zon_games where game_category='$name' order by id desc";
         <?php // Showing Category name ?>
         <h1 class="font-bold text-4xl dark:text-gray-200 mb-3 mt-12 text-center capitalize"><?php echo $name ?></h1>
         <?php // We are checking whether the user who has searched the category here is in the category database or not. ?>
-        <?php if (Exist_Data("zon_games", "game_category='$name'") !== 0) { ?>
+        <?php if (Exist_Data("zap_games", "game_category='$name'") !== 0) { ?>
             <?php // Game Showing Container  ?>
-            <div id="zon_games" class="grid mt-16 mx-2"></div>
+            <div id="zap_games" class="grid mt-16 mx-2"></div>
             <?php // Skeleton Loading  ?>
             <div class="zon-loader grid mt-16 mx-2">
                 <a
@@ -87,7 +87,7 @@ $query = "SELECT * from zon_games where game_category='$name' order by id desc";
         var c_n = '<?php echo $_GET['name'] ?>';
         $.post("<?php echo $site_url ?>includes/ajax/cd.php", { page: page_no, name: c_n }, (data) => {
             // console.log(data);
-            $("#zon_games").append(data);
+            $("#zap_games").append(data);
             $(".zon-loader").hide();
         });
 
