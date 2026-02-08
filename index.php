@@ -5,7 +5,7 @@
 
 <?php // Getting Total Categories ?>
 <?php
-$run = mysqli_query($con, "select * from zon_category");
+$run = mysqli_query($con, "select * from zap_category");
 $count = mysqli_num_rows($run);
 ?>
 <?php // Body Start ?>
@@ -50,7 +50,8 @@ $count = mysqli_num_rows($run);
                             <img src="<?= $row['game_image_url'] ?>" class="absolute w-full h-full object-cover"
                                 alt="<?= $row['game_name'] ?>">
                             <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                                <?= $row['game_name'] ?></h2>
+                                <?= $row['game_name'] ?>
+                            </h2>
                         </div>
                     </a>
                 <?php } ?>
@@ -69,7 +70,8 @@ $count = mysqli_num_rows($run);
                             <img src="<?= $row['game_image_url'] ?>" class="absolute w-full h-full object-cover"
                                 alt="<?= $row['game_name'] ?>">
                             <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                                <?= $row['game_name'] ?></h2>
+                                <?= $row['game_name'] ?>
+                            </h2>
                         </div>
                     </a>
                 <?php } ?>
@@ -108,7 +110,8 @@ $count = mysqli_num_rows($run);
                         <img src="<?= $row['game_image_url'] ?>" class="w-full h-full object-cover"
                             alt="<?= $row['game_name'] ?>">
                         <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                            <?= $row['game_name'] ?></h2>
+                            <?= $row['game_name'] ?>
+                        </h2>
                     </a>
                 <?php } ?>
                 <?php
@@ -127,7 +130,8 @@ $count = mysqli_num_rows($run);
                         <img src="<?= $row['game_image_url'] ?>" class="w-full h-full object-cover"
                             alt="<?= $row['game_name'] ?>">
                         <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                            <?= $row['game_name'] ?></h2>
+                            <?= $row['game_name'] ?>
+                        </h2>
                     </a>
                 <?php } ?>
             </div>
@@ -171,7 +175,8 @@ $count = mysqli_num_rows($run);
                                 <img src="<?= $row['game_image_url'] ?>" class="w-full h-full object-cover"
                                     alt="<?= $row['game_name'] ?>">
                                 <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                                    <?= $row['game_name'] ?></h2>
+                                    <?= $row['game_name'] ?>
+                                </h2>
                             </a>
                         <?php } ?>
                     </div>
@@ -199,7 +204,8 @@ $count = mysqli_num_rows($run);
                                 <img src="<?= $row['game_image_url'] ?>" class="w-full h-full object-cover"
                                     alt="<?= $row['game_name'] ?>">
                                 <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                                    <?= $row['game_name'] ?></h2>
+                                    <?= $row['game_name'] ?>
+                                </h2>
                             </a>
                         <?php } ?>
                     </div>
@@ -227,7 +233,8 @@ $count = mysqli_num_rows($run);
                                 <img src="<?= $row['game_image_url'] ?>" class="w-full h-full object-cover"
                                     alt="<?= $row['game_name'] ?>">
                                 <h2 style="z-index: 9;" class="text-white absolute  bottom-0 left-0 px-2 py-2">
-                                    <?= $row['game_name'] ?></h2>
+                                    <?= $row['game_name'] ?>
+                                </h2>
                             </a>
                         <?php } ?>
                     </div>

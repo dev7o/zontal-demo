@@ -2,20 +2,20 @@
 <footer class="mt-12">
     <?php // Footer Content 
     ?>
-    <div class="container-zon px-4 text-zinc-800 dark:text-gray-400 dark:font-light font-medium text-sm py-2">
-        <?php echo Zon_Config('footer_content') ?>
+    <div class="container-zap px-4 text-zinc-800 dark:text-gray-400 dark:font-light font-medium text-sm py-2">
+        <?php echo Zap_Config('footer_content') ?>
     </div>
     <div class="dark:bg-zinc-900 bg-gray-200 py-3 px-4">
-        <div class="container-zon">
+        <div class="container-zap">
             <div class="flex justify-between flex-md-column items-center">
-                <p class="text-gray-500 text-xs">© All Copyrights Reserved By <?php echo Zon_Config('site_name') ?>.
+                <p class="text-gray-500 text-xs">© All Copyrights Reserved By <?php echo Zap_Config('site_name') ?>.
                     Made By <a href="https://www.codester.com/MvnThemes/" class="text-blue-600">Mvnthemes</a></p>
                 <?php // Pages Links 
                 ?>
                 <ul class="flex">
                     <?php // Pages Loop 
                     ?>
-                    <?php $sql = "select * from zon_pages";
+                    <?php $sql = "select * from zap_pages";
                     $run = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_assoc($run)) { ?>
                         <?php $text = $row['title'];

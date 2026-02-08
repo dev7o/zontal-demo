@@ -5,7 +5,7 @@
 
 
 
-$page =  '';
+$page = '';
 if (!isset($_GET['page'])) {
     header("location: ?page=term");
 } else if (!empty($_GET['page'])) {
@@ -15,7 +15,8 @@ if (!isset($_GET['page'])) {
 }
 
 
-function CHECK_ROBOTS_TXT_FILE() {
+function CHECK_ROBOTS_TXT_FILE()
+{
     if (file_exists("../robots.txt") == 1) {
         echo '&check; Installed';
     } else {
@@ -81,7 +82,7 @@ function CHECK_HTACCESS()
 
 function CHECK_TABLE()
 {
-    if (file_exists("../zontal.sql") == 1) {
+    if (file_exists("../zapplay.sql") == 1) {
         echo '&check; Installed';
     } else {
         echo '&times; Not Installed';
@@ -158,7 +159,8 @@ function CHECK_CONFIG_FILE()
                             <label class="text-gray-600" id="agreeButton">Before Continuing You Agreement Terms And
                                 Condition</label>
                         </div>
-                        <button disabled id="step_1_button" style="width: fit-content;" href="?page=requirem" class="mt-6 block bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md">Continue</button>
+                        <button disabled id="step_1_button" style="width: fit-content;" href="?page=requirem"
+                            class="mt-6 block bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md">Continue</button>
                     </form>
                 </div>
             <?php } ?>
@@ -181,7 +183,8 @@ function CHECK_CONFIG_FILE()
                             <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">MySQLi</td>
                                 <td class="text-gray-700 w-full text-xs">Required MySQLi PHP extension</td>
-                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_MYSQL() ?></td>
+                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_MYSQL() ?>
+                                </td>
                             </tr>
                             <!-- <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">GD Library </td>
@@ -206,26 +209,32 @@ function CHECK_CONFIG_FILE()
                             <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">.htaccess </td>
                                 <td class="text-gray-700 w-full text-xs">Required .htaccess file for script security
-                                    (Located in ./Zontal) </td>
-                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_HTACCESS() ?></td>
+                                    (Located in ./ZapPlay) </td>
+                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_HTACCESS() ?>
+                                </td>
                             </tr>
                             <tr class="flex py-2 hover:bg-gray-200 px-2">
-                                <td class="text-gray-700 text-xs w-full">zontal.sql</td>
-                                <td class="text-gray-700 w-full text-xs ">Required zontal.sql for the installation (Located
+                                <td class="text-gray-700 text-xs w-full">zapplay.sql</td>
+                                <td class="text-gray-700 w-full text-xs ">Required zapplay.sql for the installation (Located
                                     in root directory) </td>
-                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_TABLE() ?></td>
+                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_TABLE() ?>
+                                </td>
                             </tr>
                             <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">config.php</td>
                                 <td class="text-gray-700 w-full text-xs">Required config.php to be writable for the
                                     installation </td>
-                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_CONFIG_FILE() ?></td>
+                                <td class="text-green-600 w-full text-right status-check text-xs">
+                                    <?php CHECK_CONFIG_FILE() ?>
+                                </td>
                             </tr>
                             <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">robots.txt</td>
                                 <td class="text-gray-700 w-full text-xs">Required robots.txt to be writable for the
                                     installation </td>
-                                <td class="text-green-600 w-full text-right status-check text-xs"><?php CHECK_ROBOTS_TXT_FILE() ?></td>
+                                <td class="text-green-600 w-full text-right status-check text-xs">
+                                    <?php CHECK_ROBOTS_TXT_FILE() ?>
+                                </td>
                             </tr>
                             <!-- <tr class="flex py-2 hover:bg-gray-200 px-2">
                                 <td class="text-gray-700 text-xs w-full">config.json</td>
@@ -236,7 +245,8 @@ function CHECK_CONFIG_FILE()
                         </tbody>
                     </table>
                     <form action="?page=info">
-                        <button href="#" id="step_2_button" style="width: fit-content;" href="?page=info" class="mt-6 block bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md">Continue</button>
+                        <button href="#" id="step_2_button" style="width: fit-content;" href="?page=info"
+                            class="mt-6 block bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md">Continue</button>
                     </form>
                 </div>
             <?php } ?>
@@ -244,29 +254,54 @@ function CHECK_CONFIG_FILE()
                 <form action="setup.php" method="POST" class="installation">
                     <h2 class="text-2xl font-bold text-gray-600">Installation</h2>
                     <div class="form sm:px-6 px-24 mt-6">
-                        <input required type="text" name="host_name" class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="SQL Host Name">
-                        <input required type="text" name="db_username" class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="SQL Username">
-                        <input type="text" name="db_password" class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="SQL Password">
-                        <input required type="text" name="db_name" class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="SQL Database Name ">
-                        <input id="site_url" required type="text" name="site_url" class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="Site URL">
-                        <label class="text-xs text-gray-600 mb-6 block">Example: http://example.com - http://www.example.com </label>
-                        <input required type="text" name="site_name" class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="Site Name">
-                        <input required type="text" name="site_title" class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="Site Title">
-                        <input required type="text" name="admin_username" class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="Admin Username">
-                        <input required type="text" name="admin_password" class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2" placeholder="Admin Password">
+                        <input required type="text" name="host_name"
+                            class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="SQL Host Name">
+                        <input required type="text" name="db_username"
+                            class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="SQL Username">
+                        <input type="text" name="db_password"
+                            class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="SQL Password">
+                        <input required type="text" name="db_name"
+                            class="w-full bg-gray-100 mb-4 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="SQL Database Name ">
+                        <input id="site_url" required type="text" name="site_url"
+                            class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="Site URL">
+                        <label class="text-xs text-gray-600 mb-6 block">Example: http://example.com - http://www.example.com
+                        </label>
+                        <input required type="text" name="site_name"
+                            class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="Site Name">
+                        <input required type="text" name="site_title"
+                            class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="Site Title">
+                        <input required type="text" name="admin_username"
+                            class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="Admin Username">
+                        <input required type="text" name="admin_password"
+                            class="w-full bg-gray-100 mb-1 outline-none border-2 rounded-md focus:border-blue-600 px-2 py-2"
+                            placeholder="Admin Password">
                     </div>
                     <!-- <a id="step_3_button" style="width: fit-content;" href="?page=finish" class="mt-6 block bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md">Install</a> -->
-                    <button id="Submit" name="install" class="mt-6 flex gap-5 items-center bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md" type="button">Install</button>
-                    <button type="submit" name="install" id="go" class="opacity-0" ></button>
+                    <button id="Submit" name="install"
+                        class="mt-6 flex gap-5 items-center bg-blue-600 px-3 py-2 rounded-md text-sm text-white uppercase spacing-md"
+                        type="button">Install</button>
+                    <button type="submit" name="install" id="go" class="opacity-0"></button>
                 </form>
             <?php } ?>
 
             <?php if (isset($page) && $page == 'finish') { ?>
                 <div class="finish">
                     <h2 class="text-2xl mb-4 font-bold text-gray-800">Your Website is Ready!</h2>
-                    <p class="text-gray-600"> Congratulations! Zontal Script Has Been Successfully Installed and your website is ready.</p>
-                    <p class="text-gray-600"> Login to your admin panel to make changes and modify any default content according to your needs.</p>
-                    <a id="step_3_button" style="width: fit-content;" class="mt-6 cursor-pointer block bg-blue-600 px-3 py-2 mt-6 rounded-md text-sm text-white uppercase spacing-md">Let's Start</a>
+                    <p class="text-gray-600"> Congratulations! ZapPlay Script Has Been Successfully Installed and your
+                        website is ready.</p>
+                    <p class="text-gray-600"> Login to your admin panel to make changes and modify any default content
+                        according to your needs.</p>
+                    <a id="step_3_button" style="width: fit-content;"
+                        class="mt-6 cursor-pointer block bg-blue-600 px-3 py-2 mt-6 rounded-md text-sm text-white uppercase spacing-md">Let's
+                        Start</a>
                 </div>
             <?php } ?>
         </div>
@@ -293,6 +328,7 @@ function CHECK_CONFIG_FILE()
             padding: 0;
             scroll-behavior: smooth;
         }
+
         .loader {
             height: 10px;
             width: 10px;
@@ -304,13 +340,25 @@ function CHECK_CONFIG_FILE()
         }
 
         @keyframes spin {
-            0% {transform: rotate(0deg);}
-            100% {transform: rotate(360deg);}
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
+
         @-webkit-keyframes spin {
-            0% {transform: rotate(0deg);}
-            100% {transform: rotate(360deg);}
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
+
         body {
             background: #f6f7fb;
         }
@@ -413,8 +461,8 @@ function CHECK_CONFIG_FILE()
             var Submit_Button = document.querySelector('#Submit');
             Submit_Button.setAttribute("disabled", "");
             Submit_Button.innerHTML = "<div class='loader'></div> Install";
-        
-            
+
+
             // Submit_Button.setAttribute("type", "submit");
             document.getElementById('go').click();
             // setTimeout(() => {
@@ -493,8 +541,8 @@ function CHECK_CONFIG_FILE()
         })
 
         function Check_Form_Validity() {
-        document.querySelectorAll('input[required]').forEach((e) => {
-            // e.addEventListener("keyup", () => {
+            document.querySelectorAll('input[required]').forEach((e) => {
+                // e.addEventListener("keyup", () => {
                 if (e.value !== '') {
                     if (document.getElementById("Submit") !== null) {
                         document.getElementById("Submit").disabled = false;
@@ -504,18 +552,18 @@ function CHECK_CONFIG_FILE()
                         document.getElementById("Submit").disabled = true;
                     }
                 }
-            // })
-        });
-    }
+                // })
+            });
+        }
 
-    if (STEP_5_BUTTON !== null) {
-        STEP_5_BUTTON.addEventListener("click", () => {
-            localStorage.clear();
-            window.location.href='../';
-        })
-    }
+        if (STEP_5_BUTTON !== null) {
+            STEP_5_BUTTON.addEventListener("click", () => {
+                localStorage.clear();
+                window.location.href = '../';
+            })
+        }
 
-    Check_Form_Validity();
+        Check_Form_Validity();
 
         document.querySelectorAll('input[required]').forEach((e) => {
             e.addEventListener("keyup", () => {

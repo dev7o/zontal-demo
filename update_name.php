@@ -1,14 +1,14 @@
 <?php
 include("includes/config.php");
 
-// Update site name in zon_config
+// Update site name in zap_config
 $new_name = "ZapPlay";
 $new_tagline = "Welcome to ZapPlay";
 $new_title = "ZapPlay - Arcade HTML 5 Game Portal PHP Script";
 $new_desc = "ZapPlay - Arcade HTML 5 Game Portal PHP Script";
 $new_keywords = "ZapPlay Game Portal, Game Portal, Online Playing Games, HTML5 Games";
 
-$query = "UPDATE zon_config SET 
+$query = "UPDATE zap_config SET 
     site_name = '$new_name', 
     profile_tagline = '$new_tagline',
     site_title = '$new_title',

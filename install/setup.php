@@ -3,15 +3,15 @@
 
 if (isset($_POST) && !empty($_POST) && isset($_POST['install'])) {
 
-    $host_name              =    htmlspecialchars($_POST['host_name']);
-    $db_username            =    htmlspecialchars($_POST['db_username']);
-    $db_password            =    htmlspecialchars($_POST['db_password']);
-    $db_name                =    htmlspecialchars($_POST['db_name']);
-    $site_URL               =    htmlspecialchars(filter_var($_POST['site_url'], FILTER_VALIDATE_URL));
-    $site_name              =    htmlspecialchars($_POST['site_name']);
-    $site_title             =    htmlspecialchars($_POST['site_title']);
-    $admin_username         =    htmlspecialchars($_POST['admin_username']);
-    $admin_password         =    htmlspecialchars($_POST['admin_password']);
+    $host_name = htmlspecialchars($_POST['host_name']);
+    $db_username = htmlspecialchars($_POST['db_username']);
+    $db_password = htmlspecialchars($_POST['db_password']);
+    $db_name = htmlspecialchars($_POST['db_name']);
+    $site_URL = htmlspecialchars(filter_var($_POST['site_url'], FILTER_VALIDATE_URL));
+    $site_name = htmlspecialchars($_POST['site_name']);
+    $site_title = htmlspecialchars($_POST['site_title']);
+    $admin_username = htmlspecialchars($_POST['admin_username']);
+    $admin_password = htmlspecialchars($_POST['admin_password']);
 
     $connect = true;
 
@@ -23,7 +23,7 @@ if (isset($_POST) && !empty($_POST) && isset($_POST['install'])) {
     }
 
     if ($connect) {
-        $filename = '../zontal.sql';
+        $filename = '../zapplay.sql';
         // Temporary variable, used to store current query
         $templine = '';
         // Read in entire file
@@ -49,7 +49,7 @@ if (isset($_POST) && !empty($_POST) && isset($_POST['install'])) {
         $config_query = "INSERT INTO zon_config (`site_name`, `site_title`) values ('$site_name', '$site_title')";
 
         if (mysqli_query($con, $user_query) && mysqli_query($con, $config_query)) {
-$robots_txt_content = "
+            $robots_txt_content = "
 User-agent: Googlebot
 Disallow: 
 User-agent: googlebot-image
@@ -88,16 +88,16 @@ Disallow: /admin
 Disallow: /install
 Disallow: /includes
 Sitemap: {$site_URL}sitemap.xml";
-$config_file_content = '
+            $config_file_content = '
 <?php
 // +------------------------------------------------------------------------+
 // | @author: MvnThemes
-// | @name: Zontal - The Arcade Online HTML5 Game Playing Platform
+// | @name: ZapPlay - The Arcade Online HTML5 Game Playing Platform
 // | @author_email: mvk62015@gmail.com   
 // | @version: 1.0v
 // +------------------------------------------------------------------------+
-// | Zontal - The Arcade Online HTML5 Game Playing Platform
-// | Copyright (c) 2017 Zontal. All rights reserved.
+// | ZapPlay - The Arcade Online HTML5 Game Playing Platform
+// | Copyright (c) 2017 ZapPlay. All rights reserved.
 // +------------------------------------------------------------------------+
 
 // MySQL Hostname
@@ -114,7 +114,7 @@ $con = mysqli_connect($sql_db_host, $sql_db_user, $sql_db_pass, $sql_db_name);
 // Site URL
 $site_url = "' . $site_URL . '"; // e.g (http://example.com)
 ?>';
-$htaccess_content = "
+            $htaccess_content = "
 ErrorDocument 404 {$site_URL}404
 RewriteEngine On
 RewriteRule ^{REQUEST_FILENAME} !-f

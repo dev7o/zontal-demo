@@ -36,4 +36,4 @@ Disallow:
 Disallow: /admin
 Disallow: /install
 Disallow: /includes
-Sitemap: https://zontal-demo-production.up.railway.app/sitemap.xml
+Sitemap: https://zapplay-demo-production.up.railway.app/sitemap.xml

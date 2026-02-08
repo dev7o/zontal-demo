@@ -7,7 +7,7 @@ function User_Data($column)
 {
     global $con;
     $current_user = $_SESSION['Loggedin_user_id'];
-    $sql = "select * from zon_users where id=$current_user";
+    $sql = "select * from zap_users where id=$current_user";
     $run = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($run);
 
@@ -19,7 +19,7 @@ function User_Data_Two($column)
     global $con;
     if (isset($_SESSION['Loggedin_user'])) {
         $current_user = $_SESSION['Loggedin_user_id'];
-        $sql = "select * from zon_users where id=$current_user";
+        $sql = "select * from zap_users where id=$current_user";
         $row = mysqli_fetch_assoc(mysqli_query($con, $sql));
 
         return $row[$column];
@@ -30,7 +30,7 @@ function User_Data_Two($column)
 function User_Data_By_Cond($column, $cond)
 {
     global $con;
-    $sql = "select * from zon_users where $cond";
+    $sql = "select * from zap_users where $cond";
     $row = mysqli_fetch_assoc(mysqli_query($con, $sql));
 
     return $row[$column];
@@ -44,7 +44,7 @@ function Game_Data($id, $data)
 
     global $con;
 
-    $query = "SELECT * from zon_games where id=$id";
+    $query = "SELECT * from zap_games where id=$id";
 
     $row = mysqli_fetch_assoc(mysqli_query($con, $query));
 
@@ -56,7 +56,7 @@ function Game_Data_Two($id, $data)
 {
     global $con;
 
-    $query = "SELECT * from zon_games where id=$id";
+    $query = "SELECT * from zap_games where id=$id";
 
     $row = mysqli_fetch_assoc(mysqli_query($con, $query));
 
@@ -89,7 +89,7 @@ function Game_Likes($data, $condition)
 {
     global $con;
 
-    $query = "select * from zon_likes where $condition";
+    $query = "select * from zap_likes where $condition";
 
     $run = mysqli_query($con, $query);
 
@@ -99,32 +99,15 @@ function Game_Likes($data, $condition)
 }
 
 // Getting All Configuraton Data of Site
-function Zon_Config($data)
+function Zap_Config($data)
 {
     global $con;
 
-    $query = "select * from zon_config";
+    $query = "select * from zap_config";
 
     $run = mysqli_query($con, $query);
 
     $row = mysqli_fetch_assoc($run);
-
-    // Overriding specific config values programmatically
-    if ($data == 'site_name') {
-        return "ZapPlay";
-    }
-    if ($data == 'profile_tagline') {
-        return "Welcome to ZapPlay";
-    }
-    if ($data == 'site_title') {
-        return "ZapPlay - Arcade HTML 5 Game Portal";
-    }
-    if ($data == 'site_desc') {
-        return "ZapPlay - Arcade HTML 5 Game Portal";
-    }
-    if ($data == 'site_keywords') {
-        return "ZapPlay Game Portal, Game Portal, Online Playing Games, HTML5 Games";
-    }
 
     return $row[$data];
 }
@@ -135,7 +118,7 @@ function AutoPlay()
     global $con;
     global $site_url;
 
-    $query = "select * from zon_games order by id desc limit 1";
+    $query = "select * from zap_games order by id desc limit 1";
 
     $run = mysqli_query($con, $query);
 
@@ -149,7 +132,7 @@ function Category_Data($data, $condition)
 {
     global $con;
 
-    $query = "select * from zon_category where $condition";
+    $query = "select * from zap_category where $condition";
 
     $run = mysqli_query($con, $query);
 
@@ -170,7 +153,7 @@ function Game_likes_data($data)
 
     $current_user = User_Data_Two('id');
 
-    $query = "select * from zon_likes where user_id=$current_user";
+    $query = "select * from zap_likes where user_id=$current_user";
 
     $run = mysqli_query($con, $query);
 
@@ -185,7 +168,7 @@ function Total_Games()
 
     global $con;
 
-    $query = "select * from zon_games";
+    $query = "select * from zap_games";
 
     return mysqli_num_rows(mysqli_query($con, $query));
 }
@@ -205,7 +188,7 @@ function Total_Items($table)
 function ValidateFields($field, $var)
 {
     global $con;
-    $Validate = "select * from zon_users where $field='$var'";
+    $Validate = "select * from zap_users where $field='$var'";
 
     return mysqli_num_rows(mysqli_query($con, $Validate));
 }
@@ -215,7 +198,7 @@ function page_data($id, $data)
 {
     global $con;
 
-    $query = "select * from zon_pages where id=$id";
+    $query = "select * from zap_pages where id=$id";
 
     $run = mysqli_query($con, $query);
 
