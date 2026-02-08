@@ -12,7 +12,14 @@ if (getenv('RAILWAY_ENVIRONMENT')) {
     $sql_db_port = getenv('MYSQLPORT') ?: '3306';
 
     // تحديث الرابط ليكون ديناميكي بناءً على النطاق الحالي
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    // Check for HTTPS using multiple methods (Railway uses X-Forwarded-Proto header)
+    $is_https = (
+        (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ||
+        (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+        (isset($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
+        (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+    );
+    $protocol = $is_https ? "https" : "http";
     $site_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/";
 } else {
     // إعدادات الاتصال المحلية
